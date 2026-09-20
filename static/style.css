@@ -155,6 +155,7 @@ body > header p {
 
 /* =========================================================
    HEADER GEOMETRIC EFFECTS
+   Mobile-first sizes
 ========================================================= */
 
 body > header::before {
@@ -162,18 +163,18 @@ body > header::before {
 
     position: absolute;
 
-    top: -95px;
-    left: 7%;
+    top: -70px;
+    left: 5%;
 
-    width: 180px;
-    height: 180px;
+    width: 125px;
+    height: 125px;
 
     border: 2px solid rgba(255, 255, 255, 0.09);
     border-radius: 50%;
 
     box-shadow:
-        0 0 0 28px rgba(255, 255, 255, 0.025),
-        0 0 0 58px rgba(255, 255, 255, 0.015);
+        0 0 0 20px rgba(255, 255, 255, 0.025),
+        0 0 0 40px rgba(255, 255, 255, 0.015);
 
     pointer-events: none;
     z-index: -1;
@@ -184,11 +185,11 @@ body > header::after {
 
     position: absolute;
 
-    right: 8%;
-    bottom: -45px;
+    right: 5%;
+    bottom: -35px;
 
-    width: 125px;
-    height: 125px;
+    width: 85px;
+    height: 85px;
 
     border: 2px solid rgba(255, 255, 255, 0.11);
     border-radius: 50%;
@@ -202,8 +203,8 @@ body > header::after {
         );
 
     box-shadow:
-        0 0 0 20px rgba(255, 255, 255, 0.025),
-        inset 0 0 25px rgba(74, 144, 194, 0.08);
+        0 0 0 14px rgba(255, 255, 255, 0.025),
+        inset 0 0 18px rgba(74, 144, 194, 0.08);
 
     pointer-events: none;
 
@@ -341,23 +342,26 @@ main header h1 {
     color: var(--color-text-light);
 }
 
+
+/* Mobile-size page header geometry */
+
 main header::after {
     content: "";
 
     position: absolute;
 
-    width: 90px;
-    height: 90px;
+    width: 62px;
+    height: 62px;
 
-    right: -35px;
-    top: -40px;
+    right: -25px;
+    top: -28px;
 
     border-radius: 50%;
 
     border: 1px solid rgba(255, 255, 255, 0.11);
 
     box-shadow:
-        0 0 0 18px rgba(255, 255, 255, 0.025);
+        0 0 0 12px rgba(255, 255, 255, 0.025);
 
     pointer-events: none;
 }
@@ -452,23 +456,26 @@ section > h2 {
     font-size: 1.35rem;
 }
 
+
+/* Mobile-size section geometry */
+
 section > h2::after {
     content: "";
 
     position: absolute;
 
-    width: 90px;
-    height: 90px;
+    width: 62px;
+    height: 62px;
 
-    right: -35px;
-    top: -42px;
+    right: -26px;
+    top: -30px;
 
     border-radius: 50%;
 
     border: 1px solid rgba(255, 255, 255, 0.11);
 
     box-shadow:
-        0 0 0 16px rgba(255, 255, 255, 0.025);
+        0 0 0 11px rgba(255, 255, 255, 0.025);
 
     pointer-events: none;
 }
@@ -710,7 +717,7 @@ article h3 {
 
 /* =========================================================
    ARTICLE GEOMETRIC DETAIL
-   Kept inside the content box only.
+   Mobile-first size
 ========================================================= */
 
 article::after {
@@ -718,13 +725,13 @@ article::after {
 
     position: absolute;
 
-    width: 55px;
-    height: 55px;
+    width: 38px;
+    height: 38px;
 
-    right: -25px;
-    top: -25px;
+    right: -18px;
+    top: -18px;
 
-    border-radius: 14px;
+    border-radius: 10px;
 
     border: 1px solid rgba(30, 77, 123, 0.08);
 
@@ -946,6 +953,7 @@ body > footer p:last-child {
 
 /* =========================================================
    FOOTER GEOMETRIC DETAIL
+   Mobile-first size
 ========================================================= */
 
 body > footer::after {
@@ -953,16 +961,16 @@ body > footer::after {
 
     position: absolute;
 
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
 
-    right: -65px;
-    bottom: -80px;
+    right: -45px;
+    bottom: -55px;
 
     border:
         1px solid rgba(255, 255, 255, 0.07);
 
-    border-radius: 28px;
+    border-radius: 20px;
 
     transform: rotate(32deg);
 
@@ -984,7 +992,7 @@ video {
 
 
 /* =========================================================
-   SMALL SCREEN SAFETY
+   TABLET AND DESKTOP
 ========================================================= */
 
 @media (min-width: 641px) {
@@ -1042,5 +1050,96 @@ video {
             3rem
             0.95rem
             1.1rem;
+    }
+
+
+    /* =====================================================
+       RESTORE DESKTOP HEADER GEOMETRY
+    ===================================================== */
+
+    body > header::before {
+        top: -95px;
+        left: 7%;
+
+        width: 180px;
+        height: 180px;
+
+        box-shadow:
+            0 0 0 28px rgba(255, 255, 255, 0.025),
+            0 0 0 58px rgba(255, 255, 255, 0.015);
+    }
+
+    body > header::after {
+        right: 8%;
+        bottom: -45px;
+
+        width: 125px;
+        height: 125px;
+
+        box-shadow:
+            0 0 0 20px rgba(255, 255, 255, 0.025),
+            inset 0 0 25px rgba(74, 144, 194, 0.08);
+    }
+
+
+    /* =====================================================
+       RESTORE DESKTOP PAGE HEADER GEOMETRY
+    ===================================================== */
+
+    main header::after {
+        width: 90px;
+        height: 90px;
+
+        right: -35px;
+        top: -40px;
+
+        box-shadow:
+            0 0 0 18px rgba(255, 255, 255, 0.025);
+    }
+
+
+    /* =====================================================
+       RESTORE DESKTOP SECTION GEOMETRY
+    ===================================================== */
+
+    section > h2::after {
+        width: 90px;
+        height: 90px;
+
+        right: -35px;
+        top: -42px;
+
+        box-shadow:
+            0 0 0 16px rgba(255, 255, 255, 0.025);
+    }
+
+
+    /* =====================================================
+       RESTORE DESKTOP ARTICLE GEOMETRY
+    ===================================================== */
+
+    article::after {
+        width: 55px;
+        height: 55px;
+
+        right: -25px;
+        top: -25px;
+
+        border-radius: 14px;
+    }
+
+
+    /* =====================================================
+       RESTORE DESKTOP FOOTER GEOMETRY
+    ===================================================== */
+
+    body > footer::after {
+        width: 150px;
+        height: 150px;
+
+        right: -65px;
+        bottom: -80px;
+
+        border-radius: 28px;
     }
 }
