@@ -126,7 +126,7 @@ body > header {
     background: var(--color-primary);
     color: var(--color-text-light);
 
-    padding: 3rem var(--space-lg);
+    padding: var(--space-lg) var(--space-md);
 
     text-align: center;
 }
@@ -231,7 +231,7 @@ body > nav {
 }
 
 body > nav ul {
-    width: min(100% - 2rem, var(--content-width));
+    width: calc(100% - 1rem);
 
     margin: 0 auto;
     padding: var(--space-sm) 0;
@@ -241,7 +241,7 @@ body > nav ul {
     align-items: center;
     flex-wrap: wrap;
 
-    gap: 2.5rem;
+    gap: var(--space-sm);
 
     list-style: none;
 }
@@ -249,7 +249,9 @@ body > nav ul {
 body > nav a {
     display: block;
 
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 0.7rem;
+
+    font-size: 0.92rem;
 
     color: var(--color-text-light);
 
@@ -278,11 +280,11 @@ body > nav a:focus-visible {
 ========================================================= */
 
 main {
-    width: min(100% - 2rem, var(--content-width));
+    width: min(100% - 1rem, var(--content-width));
 
     margin: 0 auto;
 
-    padding: var(--space-2xl) 0;
+    padding: var(--space-xl) 0;
 }
 
 main > section,
@@ -304,7 +306,7 @@ main > article {
 
 main:has(> article),
 main:has(> header) {
-    width: min(100% - 2rem, var(--history-width));
+    width: min(100% - 1rem, var(--history-width));
 }
 
 
@@ -437,12 +439,11 @@ section {
 
 section > h2 {
     position: relative;
-
     overflow: hidden;
 
     margin: 0;
 
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-md);
 
     background: var(--color-primary);
 
@@ -481,8 +482,8 @@ section > p,
 section > ul,
 section > table,
 section > article {
-    margin-left: var(--space-lg);
-    margin-right: var(--space-lg);
+    margin-left: var(--space-md);
+    margin-right: var(--space-md);
 }
 
 section > p:first-of-type,
@@ -503,20 +504,26 @@ section > article:last-child {
    HOME PAGE — WEEKLY WORK
 ========================================================= */
 
-main > section:first-child > ul {
-    margin: var(--space-lg);
+.weekly-list {
+    margin: var(--space-md);
 
     padding: 0;
 
     list-style: none;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: var(--space-sm);
 }
 
-main > section:first-child > ul > li {
-    margin: 0 0 var(--space-sm);
-}
-
-main > section:first-child > ul > li:last-child {
-    margin-bottom: 0;
+.weekly-list > li {
+    margin: 0;
 }
 
 
@@ -534,10 +541,10 @@ main > section:first-child > ul > li > a {
     width: 100%;
 
     padding:
-        0.95rem
-        3rem
-        0.95rem
-        1.1rem;
+        0.85rem
+        2.7rem
+        0.85rem
+        1rem;
 
     color: var(--color-secondary);
 
@@ -670,7 +677,7 @@ article {
 
     overflow: hidden;
 
-    padding: var(--space-lg);
+    padding: var(--space-md);
 
     background: var(--color-surface-soft);
 
@@ -980,61 +987,60 @@ video {
    SMALL SCREEN SAFETY
 ========================================================= */
 
-@media (max-width: 640px) {
+@media (min-width: 641px) {
 
-    main,
+    main {
+        width: min(100% - 2rem, var(--content-width));
+
+        padding: var(--space-2xl) 0;
+    }
+
     main:has(> article),
     main:has(> header) {
-        width: min(100% - 1rem, var(--history-width));
-
-        padding:
-            var(--space-xl)
-            0;
+        width: min(100% - 2rem, var(--history-width));
     }
 
     body > header {
-        padding:
-            var(--space-lg)
-            var(--space-md);
+        padding: 3rem var(--space-lg);
     }
 
     body > nav ul {
-        width: calc(100% - 1rem);
+        width: min(100% - 2rem, var(--content-width));
+
+        gap: 2.5rem;
     }
 
     body > nav a {
-        padding:
-            0.5rem
-            0.7rem;
+        padding: 0.55rem 0.9rem;
 
-        font-size: 0.92rem;
+        font-size: 1rem;
     }
 
     section > h2 {
-        padding: var(--space-md);
+        padding: var(--space-md) var(--space-lg);
     }
 
     section > p,
     section > ul,
     section > table,
     section > article {
-        margin-left: var(--space-md);
-        margin-right: var(--space-md);
+        margin-left: var(--space-lg);
+        margin-right: var(--space-lg);
     }
 
     article {
-        padding: var(--space-md);
+        padding: var(--space-lg);
     }
 
-    main > section:first-child > ul {
-        margin: var(--space-md);
+    .weekly-list {
+        margin: var(--space-lg);
     }
 
     main > section:first-child > ul > li > a {
         padding:
-            0.85rem
-            2.7rem
-            0.85rem
-            1rem;
+            0.95rem
+            3rem
+            0.95rem
+            1.1rem;
     }
 }
