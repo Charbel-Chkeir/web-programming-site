@@ -1,104 +1,103 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Web</title>
-</head>
-<body>
-    <main>
-        <article>
-            <header>
-                <h1>History of the Web</h1>
-            </header>
-            
-            <section>
-                <h2>Introduction</h2>
-                <p>The World Wide Web (often shortened to the Web) is an information space where documents and other web resources are identified by uniform resource identifiers and can be accessed via the Internet. Invented in 1989 by British scientist Tim Berners-Lee at CERN, the Web turned raw internet infrastructure into a graphical, hyperlinked medium accessible to researchers, enterprises, and the general public.</p>
-            </section>
+{% extends "base.html" %}
 
-            <section>
-                <h2>Key Milestones</h2>
-                <table>
-                    <caption>Major milestones in the development of the World Wide Web from the 1980s to the 2000s</caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">Year</th>
-                            <th scope="col">Event</th>
-                            <th scope="col">Why it Mattered</th>
-                            <th scope="col">Source</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1989</td>
-                            <td>Tim Berners-Lee submitted his initial proposal, <em>"Information Management: A Proposal,"</em> at CERN.</td>
-                            <td>It laid out the foundational architecture for linking decentralized documents through hypertext across a global network.</td>
-                            <td>CERN / W3C</td>
-                        </tr>
-                        <tr>
-                            <td>1990</td>
-                            <td>The first web server (<code>info.cern.ch</code>) and the first web browser/editor (<code>WorldWideWeb</code>) were successfully created on a NeXT computer.</td>
-                            <td>It proved that a functioning hypertext system could operate seamlessly over live internet connections.</td>
-                            <td>CERN / Wikipedia</td>
-                        </tr>
-                        <tr>
-                            <td>1991</td>
-                            <td>The Web was introduced to the public via internet newsgroups (alt.hypertext).</td>
-                            <td>It transformed the project from an internal particle-physics tool into an open, global collaboration.</td>
-                            <td>CERN / W3C</td>
-                        </tr>
-                        <tr>
-                            <td>1993</td>
-                            <td>Release of NCSA Mosaic; CERN released web source code on a royalty-free basis.</td>
-                            <td>Mosaic's user-friendly graphical interface and inline images drove explosive mainstream adoption, while CERN's royalty-free policy assured open standards.</td>
-                            <td>CERN</td>
-                        </tr>
-                        <tr>
-                            <td>1994</td>
-                            <td>The World Wide Web Consortium (W3C) was founded at MIT/INRIA, led by Tim Berners-Lee.</td>
-                            <td>It established formal, interoperable technical standards and guidelines for the long-term evolution of web technologies.</td>
-                            <td>CERN / W3C</td>
-                        </tr>
-                        <tr>
-                            <td>2000s</td>
-                            <td>The rise of Web 2.0, dynamic web applications, and social media platforms.</td>
-                            <td>Shifted the web from static document publishing to interactive, user-generated content and collaborative web applications.</td>
-                            <td>W3C / CERN</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+{% block title %}
+History of the Web
+{% endblock %}
 
-            <section>
-                <h2>Three Key Technologies for the Web</h2>
-                <ul>
-                    <li>
-                        <strong>HTML (Hypertext Markup Language):</strong> The standard markup language used to structure documents and display content within web browsers.
-                    </li>
-                    <li>
-                        <strong>HTTP (Hypertext Transfer Protocol):</strong> The foundational application-layer protocol governing data communication and retrieval between web clients and servers.
-                    </li>
-                    <li>
-                        <strong>URL / URI (Uniform Resource Locator):</strong> A standardized system of globally unique identifiers that specifies the precise location of resources on the web.
-                    </li>
-                </ul>
-            </section>
+{% block content %}
 
-            <section>
-                <h2>Reliable Sources Used (Web)</h2>
-                <ul>
-                    <li>CERN – <em>The Birth of the Web & Short History of the Web</em></li>
-                    <li>World Wide Web Consortium (W3C) – <em>Tim Berners-Lee Biography & History Archives</em></li>
-                    <li>Wikipedia – <em>History of the World Wide Web</em></li>
-                    <li>Science Museum Group – <em>The World Wide Web: A global information space</em></li>
-                </ul>
-            </section>
-        </article>
-    </main>
-    <footer>
-        <p>Web Programming — built with Flask and deployed on Render.</p>
-        <p>This website is created for educational purposes only, as part of the GIN446 - Web Programming course,School of Engineering, USEK. (Fall 2026-2027)</p>
-    </footer>
-</body>
-</html>
+<article>
+    <header>
+        <h1>History of the Web</h1>
+    </header>
+    
+    <section>
+        <h2>Introduction</h2>
+        <p>The World Wide Web (often shortened to the Web) is an information space where documents and other web resources are identified by uniform resource identifiers and can be accessed via the Internet. Invented in 1989 by British scientist Tim Berners-Lee at CERN, the Web turned raw internet infrastructure into a graphical, hyperlinked medium accessible to researchers, enterprises, and the general public.</p>
+    </section>
+
+    <section>
+        <h2>Key Milestones</h2>
+        <table>
+            <caption>Major milestones in the development of the World Wide Web from the 1980s to the 2000s</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Year</th>
+                    <th scope="col">Event</th>
+                    <th scope="col">Why it Mattered</th>
+                    <th scope="col">Source</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1989</td>
+                    <td>Tim Berners-Lee submitted his initial proposal, <em>"Information Management: A Proposal,"</em> at CERN.</td>
+                    <td>It laid out the foundational architecture for linking decentralized documents through hypertext across a global network.</td>
+                    <td>CERN / W3C</td>
+                </tr>
+
+                <tr>
+                    <td>1990</td>
+                    <td>The first web server (<code>info.cern.ch</code>) and the first web browser/editor (<code>WorldWideWeb</code>) were successfully created on a NeXT computer.</td>
+                    <td>It proved that a functioning hypertext system could operate seamlessly over live internet connections.</td>
+                    <td>CERN / Wikipedia</td>
+                </tr>
+
+                <tr>
+                    <td>1991</td>
+                    <td>The Web was introduced to the public via internet newsgroups (alt.hypertext).</td>
+                    <td>It transformed the project from an internal particle-physics tool into an open, global collaboration.</td>
+                    <td>CERN / W3C</td>
+                </tr>
+
+                <tr>
+                    <td>1993</td>
+                    <td>Release of NCSA Mosaic; CERN released web source code on a royalty-free basis.</td>
+                    <td>Mosaic's user-friendly graphical interface and inline images drove explosive mainstream adoption, while CERN's royalty-free policy assured open standards.</td>
+                    <td>CERN</td>
+                </tr>
+
+                <tr>
+                    <td>1994</td>
+                    <td>The World Wide Web Consortium (W3C) was founded at MIT/INRIA, led by Tim Berners-Lee.</td>
+                    <td>It established formal, interoperable technical standards and guidelines for the long-term evolution of web technologies.</td>
+                    <td>CERN / W3C</td>
+                </tr>
+
+                <tr>
+                    <td>2000s</td>
+                    <td>The rise of Web 2.0, dynamic web applications, and social media platforms.</td>
+                    <td>Shifted the web from static document publishing to interactive, user-generated content and collaborative web applications.</td>
+                    <td>W3C / CERN</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Three Key Technologies for the Web</h2>
+        <ul>
+            <li>
+                <strong>HTML (Hypertext Markup Language):</strong> The standard markup language used to structure documents and display content within web browsers.
+            </li>
+            <li>
+                <strong>HTTP (Hypertext Transfer Protocol):</strong> The foundational application-layer protocol governing data communication and retrieval between web clients and servers.
+            </li>
+            <li>
+                <strong>URL / URI (Uniform Resource Locator):</strong> A standardized system of globally unique identifiers that specifies the precise location of resources on the web.
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Reliable Sources Used (Web)</h2>
+        <ul>
+            <li>CERN – <em>The Birth of the Web & Short History of the Web</em></li>
+            <li>World Wide Web Consortium (W3C) – <em>Tim Berners-Lee Biography & History Archives</em></li>
+            <li>Wikipedia – <em>History of the World Wide Web</em></li>
+            <li>Science Museum Group – <em>The World Wide Web: A global information space</em></li>
+        </ul>
+    </section>
+</article>
+
+{% endblock %}

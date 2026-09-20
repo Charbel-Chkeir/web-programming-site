@@ -1,166 +1,160 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History of the Internet - Timeline</title>
-</head>
-<body>
+{% extends "base.html" %}
 
-    <header>
-        <h1>History of the Internet</h1>
-        <p>A comprehensive journey from Cold War research to global connectivity.</p>
-    </header>
+{% block title %}
+History of the Internet - Timeline
+{% endblock %}
 
-    <nav>
-        <ul>
-            <li><a href="#intro">Introduction</a></li>
-            <li><a href="#timeline">Milestones</a></li>
-            <li><a href="#technologies">Key Technologies</a></li>
-            <li><a href="#sources">Reliable Sources Used</a></li>
-        </ul>
-    </nav>
+{% block content %}
 
-    <main>
-        <section id="intro">
-            <h2>Introduction</h2>
-            <p>The history of the Internet is a fascinating journey that began as a Cold War-era military and academic research project before evolving into the ubiquitous global network we rely on today. Rooted in packet-switching concepts from the 1960s, early networks like ARPANET allowed computers to share resources over long distances for the first time. The network rapidly expanded and standardized through the adoption of protocols like TCP/IP in the 1980s. The invention of the World Wide Web in the late 1980s and early 1990s democratized access entirely, paving the way for modern e-commerce, social media, and mobile connectivity.</p>
-        </section>
+<header>
+    <h1>History of the Internet</h1>
+    <p>A comprehensive journey from Cold War research to global connectivity.</p>
+</header>
 
-        <section id="timeline">
-            <h2>Key Milestones (1969 – 2022)</h2>
+<nav>
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#timeline">Milestones</a></li>
+        <li><a href="#technologies">Key Technologies</a></li>
+        <li><a href="#sources">Reliable Sources Used</a></li>
+    </ul>
+</nav>
 
-            <article>
-                <h3>1969: First ARPANET Connection</h3>
-                <p>On October 29, 1969, computers at UCLA and Stanford connected for the first time, establishing the foundational network of the Internet. This proved that long-distance packet networking was physically possible.</p>
-                <p>Source: <a href="https://www.computerhistory.org/internethistory/" target="_blank">Computer History Museum</a></p>
-            </article>
+<section id="intro">
+    <h2>Introduction</h2>
+    <p>The history of the Internet is a fascinating journey that began as a Cold War-era military and academic research project before evolving into the ubiquitous global network we rely on today. Rooted in packet-switching concepts from the 1960s, early networks like ARPANET allowed computers to share resources over long distances for the first time. The network rapidly expanded and standardized through the adoption of protocols like TCP/IP in the 1980s. The invention of the World Wide Web in the late 1980s and early 1990s democratized access entirely, paving the way for modern e-commerce, social media, and mobile connectivity.</p>
+</section>
 
-            <article>
-                <h3>1971: Network Email</h3>
-                <p>Programmer Ray Tomlinson implemented the first system to send mail between users on different ARPANET hosts, introducing the "@" symbol. It shifted the network's purpose toward direct human-to-human communication.</p>
-                <p>Source: <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society</a></p>
-            </article>
+<section id="timeline">
+    <h2>Key Milestones (1969 – 2022)</h2>
 
-            <article>
-                <h3>1973: Global Expansion</h3>
-                <p>The UK and Norway connected to ARPANET, expanding the network into an international endeavor and proving that connections could cross oceans.</p>
-                <p>Source: <a href="https://www.ietf.org/standards/ids/" target="_blank">IETF Standards</a></p>
-            </article>
+    <article>
+        <h3>1969: First ARPANET Connection</h3>
+        <p>On October 29, 1969, computers at UCLA and Stanford connected for the first time, establishing the foundational network of the Internet. This proved that long-distance packet networking was physically possible.</p>
+        <p>Source: <a href="https://www.computerhistory.org/internethistory/" target="_blank">Computer History Museum</a></p>
+    </article>
 
-            <article>
-                <h3>1974: The Term "Internet" & TCP/IP</h3>
-                <p>Vint Cerf and Bob Kahn published their design for the Transmission Control Program (TCP/IP), containing the first formal use of the term "internet". It laid the theoretical framework for diverse networks to interoperate.</p>
-                <p>Source: <a href="https://www.w3.org/History.html" target="_blank">W3C History</a></p>
-            </article>
+    <article>
+        <h3>1971: Network Email</h3>
+        <p>Programmer Ray Tomlinson implemented the first system to send mail between users on different ARPANET hosts, introducing the "@" symbol. It shifted the network's purpose toward direct human-to-human communication.</p>
+        <p>Source: <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society</a></p>
+    </article>
 
-            <article>
-                <h3>1983: Transition to TCP/IP</h3>
-                <p>On January 1, 1983, ARPANET switched entirely to the TCP/IP protocol, widely recognized as the birth of modern Internet architecture.</p>
-                <p>Source: <a href="https://home.cern/science/computing/the-birth-of-the-web/" target="_blank">CERN</a></p>
-            </article>
+    <article>
+        <h3>1973: Global Expansion</h3>
+        <p>The UK and Norway connected to ARPANET, expanding the network into an international endeavor and proving that connections could cross oceans.</p>
+        <p>Source: <a href="https://www.ietf.org/standards/ids/" target="_blank">IETF Standards</a></p>
+    </article>
 
-            <article>
-                <h3>1984: Domain Name System (DNS)</h3>
-                <p>Paul Mockapetris introduced DNS, a naming system allowing users to type human-readable addresses instead of complex numeric IP addresses. This made network navigation practical for everyday users.</p>
-                <p>Source: <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society</a></p>
-            </article>
+    <article>
+        <h3>1974: The Term "Internet" & TCP/IP</h3>
+        <p>Vint Cerf and Bob Kahn published their design for the Transmission Control Program (TCP/IP), containing the first formal use of the term "internet". It laid the theoretical framework for diverse networks to interoperate.</p>
+        <p>Source: <a href="https://www.w3.org/History.html" target="_blank">W3C History</a></p>
+    </article>
 
-            <article>
-                <h3>1989: World Wide Web Proposed</h3>
-                <p>Tim Berners-Lee at CERN proposed a system of interlinked hypertext documents, laying the conceptual groundwork for the modern Web.</p>
-                <p>Source: <a href="https://www.computerhistory.org/revolution/networking/19/314" target="_blank">Computer History Museum</a></p>
-            </article>
+    <article>
+        <h3>1983: Transition to TCP/IP</h3>
+        <p>On January 1, 1983, ARPANET switched entirely to the TCP/IP protocol, widely recognized as the birth of modern Internet architecture.</p>
+        <p>Source: <a href="https://home.cern/science/computing/the-birth-of-the-web/" target="_blank">CERN</a></p>
+    </article>
 
-            <article>
-                <h3>1990: First Web Server and Browser</h3>
-                <p>Berners-Lee successfully developed the first web browser and set up the first web server (info.cern.ch) on a NeXT computer at CERN, proving the Web's technical feasibility.</p>
-                <p>Source: <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html" target="_blank">W3C - Berners-Lee History</a></p>
-            </article>
+    <article>
+        <h3>1984: Domain Name System (DNS)</h3>
+        <p>Paul Mockapetris introduced DNS, a naming system allowing users to type human-readable addresses instead of complex numeric IP addresses. This made network navigation practical for everyday users.</p>
+        <p>Source: <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society</a></p>
+    </article>
 
-            <article>
-                <h3>1991: The Web Goes Public</h3>
-                <p>The World Wide Web was made publicly available, and the first web server outside of Europe was activated, initiating the Web's global expansion.</p>
-                <p>Source: <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">CERN Short History</a></p>
-            </article>
+    <article>
+        <h3>1989: World Wide Web Proposed</h3>
+        <p>Tim Berners-Lee at CERN proposed a system of interlinked hypertext documents, laying the conceptual groundwork for the modern Web.</p>
+        <p>Source: <a href="https://www.computerhistory.org/revolution/networking/19/314" target="_blank">Computer History Museum</a></p>
+    </article>
 
-            <article>
-                <h3>1993: Public Domain Web & Mosaic Browser</h3>
-                <p>CERN officially placed the World Wide Web software in the public domain, and Mosaic was launched as a highly popular graphical web browser, triggering explosive growth.</p>
-                <p>Source: <a href="https://www.ncsa.illinois.edu/enabling-science/history/" target="_blank">NCSA Illinois</a></p>
-            </article>
+    <article>
+        <h3>1990: First Web Server and Browser</h3>
+        <p>Berners-Lee successfully developed the first web browser and set up the first web server (info.cern.ch) on a NeXT computer at CERN, proving the Web's technical feasibility.</p>
+        <p>Source: <a href="https://www.w3.org/People/Berners-Lee/ShortHistory.html" target="_blank">W3C - Berners-Lee History</a></p>
+    </article>
 
-            <article>
-                <h3>1994: Foundation of the W3C</h3>
-                <p>Tim Berners-Lee founded the World Wide Web Consortium (W3C) at MIT to ensure the development of common standards for the Web so it would remain open and cohesive.</p>
-                <p>Source: <a href="https://www.w3.org/html/wg/wiki/History" target="_blank">W3C Wiki</a></p>
-            </article>
+    <article>
+        <h3>1991: The Web Goes Public</h3>
+        <p>The World Wide Web was made publicly available, and the first web server outside of Europe was activated, initiating the Web's global expansion.</p>
+        <p>Source: <a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">CERN Short History</a></p>
+    </article>
 
-            <article>
-                <h3>1995: E-Commerce Boom</h3>
-                <p>Online giants Amazon and eBay were founded, signaling the rapid commercialization and economic potential of the Internet.</p>
-                <p>Source: <a href="https://www.computerhistory.org/collections/search/?keyword=internet+commercialization" target="_blank">Computer History Museum Collections</a></p>
-            </article>
+    <article>
+        <h3>1993: Public Domain Web & Mosaic Browser</h3>
+        <p>CERN officially placed the World Wide Web software in the public domain, and Mosaic was launched as a highly popular graphical web browser, triggering explosive growth.</p>
+        <p>Source: <a href="https://www.ncsa.illinois.edu/enabling-science/history/" target="_blank">NCSA Illinois</a></p>
+    </article>
 
-            <article>
-                <h3>1997: Google Search Revolution</h3>
-                <p>Google was introduced and later became a search engine that revolutionized how humans discover and index information across the expanding Web.</p>
-                <p>Source: <a href="https://about.google/our-story/" target="_blank">Google Our Story</a></p>
-            </article>
+    <article>
+        <h3>1994: Foundation of the W3C</h3>
+        <p>Tim Berners-Lee founded the World Wide Web Consortium (W3C) at MIT to ensure the development of common standards for the Web so it would remain open and cohesive.</p>
+        <p>Source: <a href="https://www.w3.org/html/wg/wiki/History" target="_blank">W3C Wiki</a></p>
+    </article>
 
-            <article>
-                <h3>2004: Social Media Era</h3>
-                <p>Facebook officially opened, accelerating the transition to user-generated content and modern social networking platforms.</p>
-                <p>Source: <a href="https://newsroom.fb.com/company-info/" target="_blank">Facebook Newsroom</a></p>
-            </article>
+    <article>
+        <h3>1995: E-Commerce Boom</h3>
+        <p>Online giants Amazon and eBay were founded, signaling the rapid commercialization and economic potential of the Internet.</p>
+        <p>Source: <a href="https://www.computerhistory.org/collections/search/?keyword=internet+commercialization" target="_blank">Computer History Museum Collections</a></p>
+    </article>
 
-            <article>
-                <h3>2007: The Mobile Web & iPhone</h3>
-                <p>Apple released the first iPhone, mainstreaming smartphone adoption and permanently changing how society accessed the mobile internet.</p>
-                <p>Source: <a href="https://www.apple.com/newsroom/" target="_blank">Apple Newsroom</a></p>
-            </article>
+    <article>
+        <h3>1997: Google Search Revolution</h3>
+        <p>Google was introduced and later became a search engine that revolutionized how humans discover and index information across the expanding Web.</p>
+        <p>Source: <a href="https://about.google/our-story/" target="_blank">Google Our Story</a></p>
+    </article>
 
-            <article>
-                <h3>2008: Cloud Computing & Modern Browsers</h3>
-                <p>Amazon launched Elastic Compute Cloud (EC2) while Google released Chrome, accelerating the tech industry's massive shift toward cloud-based infrastructure and faster web applications.</p>
-                <p>Source: <a href="https://aws.amazon.com/about-aws/our-origins/" target="_blank">AWS Origins</a></p>
-            </article>
+    <article>
+        <h3>2004: Social Media Era</h3>
+        <p>Facebook officially opened, accelerating the transition to user-generated content and modern social networking platforms.</p>
+        <p>Source: <a href="https://newsroom.fb.com/company-info/" target="_blank">Facebook Newsroom</a></p>
+    </article>
 
-            <article>
-                <h3>2022: Generative AI Mainstreamed</h3>
-                <p>OpenAI released ChatGPT, a conversational generative AI chatbot that revolutionized natural language processing and brought advanced AI capabilities to mainstream internet users globally.</p>
-                <p>Source: <a href="https://en.wikipedia.org/wiki/Timeline_of_the_history_of_the_Internet" target="_blank">Wikipedia Timeline</a></p>
-            </article>
-        </section>
+    <article>
+        <h3>2007: The Mobile Web & iPhone</h3>
+        <p>Apple released the first iPhone, mainstreaming smartphone adoption and permanently changing how society accessed the mobile internet.</p>
+        <p>Source: <a href="https://www.apple.com/newsroom/" target="_blank">Apple Newsroom</a></p>
+    </article>
 
-        <section id="technologies">
-            <h2>Three Key Technologies</h2>
-            <ul>
-                <li><strong>TCP/IP (Transmission Control Protocol / Internet Protocol):</strong> The foundational communication language of the Internet. It dictates how data is broken into packets, addressed, transmitted, routed, and reassembled at the destination, allowing vastly different computer networks to communicate seamlessly.</li>
-                <li><strong>DNS (Domain Name System):</strong> Essentially the phonebook of the Internet. It translates memorable, human-readable domain names into the numerical IP addresses required by computers to locate services and devices worldwide.</li>
-                <li><strong>HTTP & HTML (Hypertext Transfer Protocol & Hypertext Markup Language):</strong> The bedrock of the World Wide Web. HTTP is the protocol used to request and transmit web resources, while HTML provides the structural markup language that web browsers render into the visible interfaces we interact with daily.</li>
-            </ul>
-        </section>
+    <article>
+        <h3>2008: Cloud Computing & Modern Browsers</h3>
+        <p>Amazon launched Elastic Compute Cloud (EC2) while Google released Chrome, accelerating the tech industry's massive shift toward cloud-based infrastructure and faster web applications.</p>
+        <p>Source: <a href="https://aws.amazon.com/about-aws/our-origins/" target="_blank">AWS Origins</a></p>
+    </article>
 
-        <section id="sources">
-            <h2>Reliable Sources Used</h2>
-            <ul>
-                <li><a href="https://home.cern/science/computing/the-birth-of-the-web/" target="_blank">CERN - The Birth of the Web</a></li>
-                <li><a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">CERN - Short History of the Web</a></li>
-                <li><a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society - Short History of the Internet</a></li>
-                <li><a href="https://www.computerhistory.org/internethistory/" target="_blank">Computer History Museum - Internet History</a></li>
-                <li><a href="https://newsroom.fb.com/company-info/" target="_blank">Facebook Newsroom</a></li>
-                <li><a href="https://www.apple.com/newsroom/" target="_blank">Apple Newsroom</a></li>
-                <li><a href="https://aws.amazon.com/about-aws/our-origins/" target="_blank">AWS Origins</a></li>
-                <li><a href="https://www.w3.org/html/wg/wiki/History" target="_blank">W3C Wiki - History</a></li>
-                <li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_history_of_the_Internet" target="_blank">Wikipedia - Timeline of the History of the Internet</a></li>
-            </ul>
-        </section>
-    </main>
+    <article>
+        <h3>2022: Generative AI Mainstreamed</h3>
+        <p>OpenAI released ChatGPT, a conversational generative AI chatbot that revolutionized natural language processing and brought advanced AI capabilities to mainstream internet users globally.</p>
+        <p>Source: <a href="https://en.wikipedia.org/wiki/Timeline_of_the_history_of_the_Internet" target="_blank">Wikipedia Timeline</a></p>
+    </article>
+</section>
 
-    <footer>
-        <p>&copy; 2026 Educational Coursework Material. Created for GIN446 Web Programming.</p>
-    </footer>
+<section id="technologies">
+    <h2>Three Key Technologies</h2>
+    <ul>
+        <li><strong>TCP/IP (Transmission Control Protocol / Internet Protocol):</strong> The foundational communication language of the Internet. It dictates how data is broken into packets, addressed, transmitted, routed, and reassembled at the destination, allowing vastly different computer networks to communicate seamlessly.</li>
 
-</body>
-</html>
+        <li><strong>DNS (Domain Name System):</strong> Essentially the phonebook of the Internet. It translates memorable, human-readable domain names into the numerical IP addresses required by computers to locate services and devices worldwide.</li>
+
+        <li><strong>HTTP & HTML (Hypertext Transfer Protocol & Hypertext Markup Language):</strong> The bedrock of the World Wide Web. HTTP is the protocol used to request and transmit web resources, while HTML provides the structural markup language that web browsers render into the visible interfaces we interact with daily.</li>
+    </ul>
+</section>
+
+<section id="sources">
+    <h2>Reliable Sources Used</h2>
+    <ul>
+        <li><a href="https://home.cern/science/computing/the-birth-of-the-web/" target="_blank">CERN - The Birth of the Web</a></li>
+        <li><a href="https://home.cern/science/computing/the-birth-of-the-web/short-history-web/" target="_blank">CERN - Short History of the Web</a></li>
+        <li><a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/" target="_blank">Internet Society - Short History of the Internet</a></li>
+        <li><a href="https://www.computerhistory.org/internethistory/" target="_blank">Computer History Museum - Internet History</a></li>
+        <li><a href="https://newsroom.fb.com/company-info/" target="_blank">Facebook Newsroom</a></li>
+        <li><a href="https://www.apple.com/newsroom/" target="_blank">Apple Newsroom</a></li>
+        <li><a href="https://aws.amazon.com/about-aws/our-origins/" target="_blank">AWS Origins</a></li>
+        <li><a href="https://www.w3.org/html/wg/wiki/History" target="_blank">W3C Wiki - History</a></li>
+        <li><a href="https://en.wikipedia.org/wiki/Timeline_of_the_history_of_the_Internet" target="_blank">Wikipedia - Timeline of the History of the Internet</a></li>
+    </ul>
+</section>
+
+{% endblock %}
