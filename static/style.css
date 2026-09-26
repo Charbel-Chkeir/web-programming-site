@@ -1154,8 +1154,8 @@ video {
    RESPONSIVE MAIN NAVIGATION
 ========================================================= */
 
-/* Medium screens: 3 links per row */
-@media (max-width: 900px) {
+/* Medium screens: 3 columns */
+@media (min-width: 651px) and (max-width: 900px) {
 
     body > nav ul {
         display: grid;
@@ -1175,21 +1175,33 @@ video {
 }
 
 
-/* Small screens: 1 link per row */
+/* 650px and below: exactly 1 column */
 @media (max-width: 650px) {
 
     body > nav ul {
+        display: grid;
         grid-template-columns: 1fr;
 
+        width: 100%;
         gap: 0.4rem;
 
         padding: 0.8rem 1rem;
     }
 
+    body > nav li {
+        width: 100%;
+    }
+
     body > nav a {
+        display: block;
+        width: 100%;
+
         text-align: center;
+
         font-size: 0.95rem;
         padding: 0.6rem 0.4rem;
+
+        white-space: nowrap;
     }
 }
 }
