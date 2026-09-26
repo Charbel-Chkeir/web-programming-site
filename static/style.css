@@ -1213,9 +1213,9 @@ video {
         width: 100%;
 
         margin: 0;
-        padding: 0.8rem 1rem;
+        padding: 0.4rem 1rem;
 
-        gap: 0.4rem;
+        gap: 0.1rem;
 
         list-style: none;
     }
@@ -1230,7 +1230,7 @@ video {
 
         width: 100%;
 
-        padding: 0.6rem 0.4rem;
+        padding: 0.35rem 0.4rem;
 
         text-align: center;
 
