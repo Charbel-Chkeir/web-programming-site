@@ -1238,4 +1238,73 @@ video {
 
         white-space: nowrap;
     }
+
+    /* =========================================================
+   RESPONSIVE PAGE-SPECIFIC NAVIGATION
+========================================================= */
+
+/* 421px to 670px: 2 columns */
+@media (min-width: 421px) and (max-width: 670px) {
+
+    main nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: 0.2rem 0.5rem;
+    }
+
+    main nav li {
+        width: 100%;
+        margin: 0;
+    }
+
+    main nav a {
+        display: block;
+        width: 100%;
+
+        padding: 0.4rem 0.5rem;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+}
+
+
+/* 420px and below: 1 column */
+@media (max-width: 420px) {
+
+    main nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: 0.1rem;
+    }
+
+    main nav li {
+        width: 100%;
+        margin: 0;
+    }
+
+    main nav a {
+        display: block;
+        width: 100%;
+
+        padding: 0.35rem 0.4rem;
+
+        text-align: center;
+
+        white-space: nowrap;
+    }
+}
 }
