@@ -1239,13 +1239,13 @@ video {
         white-space: nowrap;
     }
 
-    /* =========================================================
+/* =========================================================
    RESPONSIVE PAGE NAVIGATION
-   Internet History / Web History pages
+   Internet History / Web History
 ========================================================= */
 
 
-/* 421px to 670px: 2 columns, 2 rows */
+/* 421px to 670px: exactly 2 columns */
 @media (min-width: 421px) and (max-width: 670px) {
 
     main nav {
@@ -1254,7 +1254,7 @@ video {
 
     main nav ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         width: 100%;
 
@@ -1262,6 +1262,8 @@ video {
         padding: 0;
 
         gap: 0.15rem 0.4rem;
+
+        list-style: none;
     }
 
     main nav li {
@@ -1271,21 +1273,19 @@ video {
 
     main nav a {
         display: block;
-
         width: 100%;
 
         padding: 0.35rem 0.4rem;
 
-        text-align: left;
-
+        text-align: center;
         font-size: 0.9rem;
 
-        white-space: nowrap;
+        white-space: normal;
     }
 }
 
 
-/* 420px and below: 1 column */
+/* 420px and below: exactly 1 column */
 @media (max-width: 420px) {
 
     main nav {
@@ -1302,6 +1302,8 @@ video {
         padding: 0;
 
         gap: 0.1rem;
+
+        list-style: none;
     }
 
     main nav li {
@@ -1311,16 +1313,14 @@ video {
 
     main nav a {
         display: block;
-
         width: 100%;
 
         padding: 0.3rem 0.4rem;
 
-        text-align: left;
-
+        text-align: center;
         font-size: 0.9rem;
 
-        white-space: nowrap;
+        white-space: normal;
     }
 }
 }
