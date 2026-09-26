@@ -1239,16 +1239,16 @@ video {
         white-space: nowrap;
     }
 
-    /* =========================================================
+/* =========================================================
    RESPONSIVE PAGE-SPECIFIC NAVIGATION
 ========================================================= */
 
-/* 421px to 665px: 2 columns */
-@media (min-width: 421px) and (max-width: 665px) {
+/* 421px to 670px: exactly 2 columns */
+@media (min-width: 421px) and (max-width: 670px) {
 
     main nav ul {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
 
         width: 100%;
 
@@ -1269,9 +1269,9 @@ video {
 
         padding: 0.4rem 0.5rem;
 
-        text-align: left;
+        text-align: center;
 
-        white-space: nowrap;
+        white-space: normal;
     }
 }
 
@@ -1302,9 +1302,9 @@ video {
 
         padding: 0.35rem 0.4rem;
 
-        text-align: left;
+        text-align: center;
 
-        white-space: nowrap;
+        white-space: normal;
     }
 }
 }
