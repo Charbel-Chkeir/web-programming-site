@@ -1239,84 +1239,88 @@ video {
         white-space: nowrap;
     }
 
-/* =========================================================
-   RESPONSIVE PAGE-SPECIFIC NAVIGATION
+    /* =========================================================
+   RESPONSIVE PAGE NAVIGATION
+   Internet History / Web History pages
 ========================================================= */
 
-/* 421px to 670px: exactly 2 columns */
-@media screen and (min-width: 421px) and (max-width: 670px) {
 
-    main > nav > ul {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
+/* 421px to 670px: 2 columns, 2 rows */
+@media (min-width: 421px) and (max-width: 670px) {
 
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0.2rem !important;
-
-        gap: 0.05rem 0.2rem !important;
+    main nav {
+        padding: 0.4rem;
     }
 
-    main > nav > ul > li {
-        display: block !important;
+    main nav ul {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
 
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: 0.15rem 0.4rem;
     }
 
-    main > nav > ul > li > a {
-        display: block !important;
+    main nav li {
+        width: 100%;
+        margin: 0;
+    }
 
-        width: 100% !important;
+    main nav a {
+        display: block;
 
-        padding: 0.2rem 0.3rem !important;
+        width: 100%;
 
-        text-align: left !important;
+        padding: 0.35rem 0.4rem;
+
+        text-align: left;
 
         font-size: 0.9rem;
 
-        white-space: normal !important;
+        white-space: nowrap;
     }
 }
 
 
-/* 420px and below: exactly 1 column */
-@media screen and (max-width: 420px) {
+/* 420px and below: 1 column */
+@media (max-width: 420px) {
 
-    main > nav > ul {
-        display: grid !important;
-        grid-template-columns: 1fr !important;
-
-        width: 100% !important;
-
-        margin: 0 !important;
-        padding: 0.2rem !important;
-
-        gap: 0 !important;
+    main nav {
+        padding: 0.35rem;
     }
 
-    main > nav > ul > li {
-        display: block !important;
+    main nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
 
-        width: 100% !important;
-        margin: 0 !important;
-        padding: 0 !important;
+        width: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: 0.1rem;
     }
 
-    main > nav > ul > li > a {
-        display: block !important;
+    main nav li {
+        width: 100%;
+        margin: 0;
+    }
 
-        width: 100% !important;
+    main nav a {
+        display: block;
 
-        padding: 0.18rem 0.3rem !important;
+        width: 100%;
 
-        text-align: left !important;
+        padding: 0.3rem 0.4rem;
+
+        text-align: left;
 
         font-size: 0.9rem;
 
-        white-space: normal !important;
+        white-space: nowrap;
     }
 }
 }
