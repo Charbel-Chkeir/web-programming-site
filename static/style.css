@@ -1243,8 +1243,8 @@ video {
    RESPONSIVE PAGE-SPECIFIC NAVIGATION
 ========================================================= */
 
-/* 421px to 670px: 2 columns */
-@media (min-width: 421px) and (max-width: 670px) {
+/* 421px to 665px: 2 columns */
+@media (min-width: 421px) and (max-width: 665px) {
 
     main nav ul {
         display: grid;
@@ -1269,7 +1269,7 @@ video {
 
         padding: 0.4rem 0.5rem;
 
-        text-align: center;
+        text-align: left;
 
         white-space: nowrap;
     }
@@ -1302,7 +1302,7 @@ video {
 
         padding: 0.35rem 0.4rem;
 
-        text-align: center;
+        text-align: left;
 
         white-space: nowrap;
     }
