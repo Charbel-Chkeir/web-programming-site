@@ -70,6 +70,11 @@ body {
     margin: 0;
     overflow-x: hidden;
 
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+
     background: var(--color-background);
     color: var(--color-text);
 
@@ -286,6 +291,8 @@ main {
     margin: 0 auto;
 
     padding: var(--space-xl) 0;
+
+    flex: 1;
 }
 
 main > section,
