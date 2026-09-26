@@ -1271,7 +1271,7 @@ video {
 
         text-align: left;
 
-        white-space: normal;
+        white-space: nowrap;
     }
 }
 
@@ -1304,7 +1304,7 @@ video {
 
         text-align: left;
 
-        white-space: normal;
+        white-space: nowrap;
     }
 }
 }
