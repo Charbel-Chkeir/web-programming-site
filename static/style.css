@@ -1150,7 +1150,7 @@ video {
         border-radius: 28px;
     }
 
-    /* =========================================================
+ /* =========================================================
    RESPONSIVE MAIN NAVIGATION
 ========================================================= */
 
@@ -1176,7 +1176,7 @@ video {
 
 
 /* Small screens: 1 link per row */
-@media (max-width: 520px) {
+@media (max-width: 650px) {
 
     body > nav ul {
         grid-template-columns: 1fr;
@@ -1187,8 +1187,8 @@ video {
     }
 
     body > nav a {
+        text-align: center;
         font-size: 0.95rem;
         padding: 0.6rem 0.4rem;
     }
-}
 }
