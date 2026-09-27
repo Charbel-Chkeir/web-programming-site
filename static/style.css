@@ -819,11 +819,14 @@ table {
 
 
 /* Keep table readable */
-table th,
-table td {
+table th {
     white-space: nowrap;
 }
 
+table td {
+    white-space: normal;
+    word-break: break-word;
+}
 
 /* Rounded corners */
 
@@ -857,10 +860,10 @@ table tbody tr:last-child td:last-child {
         margin-left: 0.5rem;
         margin-right: 0.5rem;
 
+        max-width: calc(100% - 1rem);
+
         overflow-x: auto;
         overflow-y: hidden;
-
-        max-width: calc(100% - 1rem);
 
         -webkit-overflow-scrolling: touch;
     }
@@ -1359,20 +1362,42 @@ body > nav::-webkit-scrollbar {
 
     }
 
-    @media (max-width: 700px) {
+    /* =========================================================
+   MOBILE CONTENT CONTAINMENT
+   Prevent overflow on small screens
+========================================================= */
+
+@media (max-width: 700px) {
+
+    section {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
 
     section > p,
     section > ul,
-    section > table,
     section > article,
-    section > pre {
-        margin-left: 0.75rem;
-        margin-right: 0.75rem;
-        max-width: calc(100% - 1.5rem);
+    section > pre,
+    section > table {
+        max-width: 100%;
     }
 
+
     section > pre {
+
         overflow-x: auto;
+
+        margin-left: 0;
+        margin-right: 0;
+
+    }
+
+
+    code {
+
+        word-break: break-word;
+
     }
 
 }
