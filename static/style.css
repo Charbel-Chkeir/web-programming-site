@@ -796,11 +796,8 @@ main li::marker {
 ========================================================= */
 
 table {
-    width:
-        calc(
-            100% -
-            (var(--space-lg) * 2)
-        );
+    width: auto;
+    max-width: 100%;
 
     margin-top: var(--space-lg);
     margin-bottom: var(--space-lg);
