@@ -1335,7 +1335,7 @@ body > nav::-webkit-scrollbar {
 
         grid-template-columns: 1fr;
 
-        gap: 0rem;
+        gap: 0.25rem;
 
         margin: 0;
 
