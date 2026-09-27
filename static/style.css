@@ -1197,7 +1197,7 @@ video {
 
         padding: 0.4rem 0.55rem;
 
-        font-size: 0.85rem;
+        font-size: 1rem;
         font-weight: 600;
 
         white-space: nowrap;
@@ -1220,6 +1220,6 @@ video {
     body > nav a {
         padding: 0.35rem 0.45rem;
 
-        font-size: 0.8rem;
+        font-size: 1rem;
     }
 }
