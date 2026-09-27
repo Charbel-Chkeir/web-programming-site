@@ -1156,108 +1156,215 @@ video {
    RESPONSIVE MAIN NAVIGATION
 ========================================================= */
 
+
 /* ---------------------------------------------------------
-   Medium and small screens:
-   Keep navigation on one row and allow horizontal scrolling
+   Default navigation:
+   Always keep items in one row
 --------------------------------------------------------- */
 
-@media (max-width: 900px) {
+body > nav {
+    overflow-x: auto;
+    overflow-y: hidden;
 
-    body > nav {
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-    body > nav ul {
-        width: max-content;
-        min-width: 100%;
-
-        margin: 0;
-        padding: 0.45rem 1rem;
-
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        align-items: center;
-
-        gap: 1.2rem;
-
-        list-style: none;
-    }
-
-    body > nav li {
-        flex: 0 0 auto;
-        margin: 0;
-    }
-
-    body > nav a {
-        display: block;
-
-        padding: 0.4rem 0.55rem;
-
-        font-size: 0.9rem;
-        font-weight: 600;
-
-        white-space: nowrap;
-    }
+    -webkit-overflow-scrolling: touch;
 }
 
 
-/* ---------------------------------------------------------
-   Small screens
---------------------------------------------------------- */
+body > nav ul {
+
+    width: max-content;
+    min-width: 100%;
+
+    margin: 0 auto;
+
+    padding: var(--space-sm) 1rem;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    flex-wrap: nowrap;
+
+    gap: 2rem;
+
+    list-style: none;
+}
+
+
+body > nav li {
+    flex: 0 0 auto;
+}
+
+
+body > nav a {
+
+    display: block;
+
+    padding: 0.45rem 0.65rem;
+
+    font-size: 0.9rem;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* Hide scrollbar but keep scrolling */
+
+body > nav {
+    scrollbar-width: none;
+}
+
+body > nav::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================================================
+   Desktop navigation
+========================================================= */
+
+@media (min-width: 641px) {
+
+    body > nav ul {
+
+        width: max-content;
+        min-width: 100%;
+
+        gap: 2.5rem;
+
+    }
+
+
+    body > nav a {
+
+        font-size: 0.95rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   Tablet navigation
+   One line + smaller text
+========================================================= */
+
+@media (max-width: 900px) {
+
+    body > nav ul {
+
+        justify-content: flex-start;
+
+        gap: 1.5rem;
+
+        padding:
+            0.55rem
+            1rem;
+
+    }
+
+
+    body > nav a {
+
+        padding:
+            0.4rem
+            0.55rem;
+
+        font-size: 0.82rem;
+
+    }
+
+}
+
+
+/* =========================================================
+   Mobile navigation
+   One line + horizontal scrolling
+========================================================= */
 
 @media (max-width: 650px) {
 
-    body > nav ul {
-        padding: 0.45rem 0.85rem;
 
-        gap: 0.8rem;
+    body > nav ul {
+
+        justify-content: flex-start;
+
+        gap: 1rem;
+
+        padding:
+            0.45rem
+            0.75rem;
+
     }
+
 
     body > nav a {
-        padding: 0.35rem 0.45rem;
 
-        font-size: 0.95rem;
+        padding:
+            0.35rem
+            0.45rem;
+
+        font-size: 0.78rem;
+
     }
 
-    /* =========================================================
-   RESPONSIVE PAGE-SPECIFIC NAVIGATION
+}
+
+
+/* =========================================================
+   PAGE-SPECIFIC NAVIGATION
+   (Week 2 / Week 3 internal navigation)
 ========================================================= */
 
 @media (max-width: 700px) {
 
+
     main nav {
+
         padding: 0.5rem;
+
     }
 
+
     main nav ul {
+
         display: grid;
+
         grid-template-columns: 1fr;
 
         gap: 0.25rem;
 
         margin: 0;
+
         padding: 0;
+
     }
+
 
     main nav li {
+
         margin: 0;
+
     }
 
+
     main nav a {
+
         display: block;
 
         width: 100%;
 
-        padding: 0.35rem 0.5rem;
+        padding:
+            0.35rem
+            0.5rem;
 
-        font-size: 1rem;
+        font-size: 0.9rem;
 
         text-align: left;
+
     }
-}
 
 }
