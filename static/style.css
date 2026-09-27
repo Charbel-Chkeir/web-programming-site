@@ -1222,4 +1222,42 @@ video {
 
         font-size: 1rem;
     }
+
+    /* =========================================================
+   RESPONSIVE PAGE-SPECIFIC NAVIGATION
+========================================================= */
+
+@media (max-width: 700px) {
+
+    main nav {
+        padding: 0.5rem;
+    }
+
+    main nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        gap: 0.25rem;
+
+        margin: 0;
+        padding: 0;
+    }
+
+    main nav li {
+        margin: 0;
+    }
+
+    main nav a {
+        display: block;
+
+        width: 100%;
+
+        padding: 0.35rem 0.5rem;
+
+        font-size: 0.9rem;
+
+        text-align: left;
+    }
+}
+
 }
