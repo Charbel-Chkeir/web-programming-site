@@ -1359,4 +1359,22 @@ body > nav::-webkit-scrollbar {
 
     }
 
+    @media (max-width: 700px) {
+
+    section > p,
+    section > ul,
+    section > table,
+    section > article,
+    section > pre {
+        margin-left: 0.75rem;
+        margin-right: 0.75rem;
+        max-width: calc(100% - 1.5rem);
+    }
+
+    section > pre {
+        overflow-x: auto;
+    }
+
+}
+
 }
