@@ -1294,7 +1294,7 @@ body > nav::-webkit-scrollbar {
         gap: 1rem;
 
         padding:
-            0.8rem
+            0.6rem
             0.75rem;
 
     }
@@ -1303,7 +1303,7 @@ body > nav::-webkit-scrollbar {
     body > nav a {
 
         padding:
-            0.7rem
+            0.55rem
             0.45rem;
 
         font-size: 0.9rem;
