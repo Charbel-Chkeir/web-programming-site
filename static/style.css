@@ -849,12 +849,18 @@ table tbody tr:last-child td:last-child {
 @media (max-width: 700px) {
 
     section > table {
+
         display: block;
+
+        width: calc(100% - 1rem);
+
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
 
         overflow-x: auto;
         overflow-y: hidden;
 
-        max-width: 100%;
+        max-width: calc(100% - 1rem);
 
         -webkit-overflow-scrolling: touch;
     }
