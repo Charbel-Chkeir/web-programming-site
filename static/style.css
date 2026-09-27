@@ -1287,7 +1287,6 @@ body > nav::-webkit-scrollbar {
 
 @media (max-width: 650px) {
 
-
     body > nav ul {
 
         justify-content: flex-start;
@@ -1295,7 +1294,7 @@ body > nav::-webkit-scrollbar {
         gap: 1rem;
 
         padding:
-            0.45rem
+            0.8rem
             0.75rem;
 
     }
@@ -1304,7 +1303,7 @@ body > nav::-webkit-scrollbar {
     body > nav a {
 
         padding:
-            0.35rem
+            0.7rem
             0.45rem;
 
         font-size: 0.78rem;
