@@ -797,7 +797,7 @@ main li::marker {
 
 table {
     width: fit-content;
-    max-width: 100%;
+    max-width: none;
 
     margin-top: var(--space-lg);
     margin-bottom: var(--space-lg);
@@ -817,9 +817,48 @@ table {
         0 5px 18px rgba(11, 31, 58, 0.05);
 }
 
+
+/* Keep table readable */
 table th,
 table td {
     white-space: nowrap;
+}
+
+
+/* Rounded corners */
+
+table thead tr:first-child th:first-child {
+    border-top-left-radius: var(--radius);
+}
+
+table thead tr:first-child th:last-child {
+    border-top-right-radius: var(--radius);
+}
+
+table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: var(--radius);
+}
+
+table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: var(--radius);
+}
+
+
+/* Mobile table behavior */
+
+@media (max-width: 700px) {
+
+    section > table {
+        display: block;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        max-width: 100%;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
 }
 
 /* =========================================================
