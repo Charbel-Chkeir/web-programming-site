@@ -400,7 +400,8 @@ main nav ul {
     display: flex;
     flex-wrap: wrap;
 
-    gap: var(--space-sm);
+    column-gap: var(--space-sm);
+    row-gap: 0.5rem;
 
     list-style: none;
 }
