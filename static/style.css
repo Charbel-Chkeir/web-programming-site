@@ -495,7 +495,8 @@ section > h2::after {
 section > p,
 section > ul,
 section > table,
-section > article {
+section > article,
+section > pre {
     margin-left: var(--space-md);
     margin-right: var(--space-md);
 }
