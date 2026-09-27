@@ -1,0 +1,739 @@
+{% extends "base.html" %}
+
+{% block title %}
+Week 3 — CSS & Reusable Design
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <h1>Week 3 — Building a Consistent Website</h1>
+    <p>
+        Exploring reusable templates, CSS design systems, modern layout techniques,
+        and responsive web design.
+    </p>
+</header>
+
+
+<nav>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#inheritance">Template Inheritance</a></li>
+        <li><a href="#css">CSS</a></li>
+        <li><a href="#variables">CSS Variables</a></li>
+        <li><a href="#layout">Flexbox & Grid</a></li>
+        <li><a href="#responsive">Responsive Design</a></li>
+        <li><a href="#comparison">Comparison</a></li>
+        <li><a href="#workflow">Development Workflow</a></li>
+        <li><a href="#references">References</a></li>
+    </ul>
+</nav>
+
+
+<section id="overview">
+
+    <h2>1. Overview</h2>
+
+    <p>
+        Modern websites rarely consist of isolated pages designed independently.
+        Instead, they use a shared structure and a consistent visual system.
+        This makes the website easier to maintain, easier to expand, and more
+        predictable for users.
+    </p>
+
+    <p>
+        Week 3 introduces two fundamental ideas:
+    </p>
+
+    <ul>
+        <li>
+            <strong>Template inheritance:</strong>
+            define the common HTML structure once and reuse it across pages.
+        </li>
+
+        <li>
+            <strong>Reusable CSS:</strong>
+            define the visual language of the website once and apply it consistently.
+        </li>
+    </ul>
+
+    <article>
+        <h3>The main principle</h3>
+
+        <p>
+            Instead of repeating the same header, navigation bar, footer,
+            colors, spacing, and layout rules on every page, we define them once
+            and reuse them throughout the website.
+        </p>
+
+        <p>
+            This follows an important software-engineering principle:
+            avoid unnecessary repetition.
+        </p>
+    </article>
+
+</section>
+
+
+<section id="inheritance">
+
+    <h2>2. Jinja Template Inheritance</h2>
+
+    <p>
+        A Flask website can use Jinja template inheritance to separate shared
+        structure from page-specific content.
+    </p>
+
+    <p>
+        The shared structure normally lives inside
+        <code>base.html</code>. Individual pages then inherit from that template.
+    </p>
+
+    <article>
+
+        <h3>Base template</h3>
+
+        <p>
+            A base template may contain the common document structure:
+        </p>
+
+        <ul>
+            <li>HTML document structure</li>
+            <li>Page metadata</li>
+            <li>Website header</li>
+            <li>Main navigation</li>
+            <li>Stylesheet connection</li>
+            <li>Main content area</li>
+            <li>Footer</li>
+        </ul>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+
+&lt;head&gt;
+    &lt;title&gt;
+        {% raw %}{% block title %}My Portfolio{% endblock %}{% endraw %}
+    &lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+    &lt;header&gt;
+        Shared website header
+    &lt;/header&gt;
+
+    &lt;main&gt;
+        {% raw %}{% block content %}{% endblock %}{% endraw %}
+    &lt;/main&gt;
+
+    &lt;footer&gt;
+        Shared footer
+    &lt;/footer&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;</code></pre>
+
+    </article>
+
+
+    <article>
+
+        <h3>Child template</h3>
+
+        <p>
+            A child template only needs to provide the content that is different.
+        </p>
+
+        <pre><code>{% raw %}{% extends "base.html" %}
+
+{% block title %}
+Week 3
+{% endblock %}
+
+{% block content %}
+
+&lt;h1&gt;My Week 3 Page&lt;/h1&gt;
+
+{% endblock %}{% endraw %}</code></pre>
+
+    </article>
+
+
+    <article>
+
+        <h3>Why template inheritance matters</h3>
+
+        <p>
+            Imagine a website with twenty pages. If the navigation bar were copied
+            into every file, adding one new menu item would require editing twenty
+            separate documents.
+        </p>
+
+        <p>
+            With template inheritance, the navigation is changed once in
+            <code>base.html</code>, and every child page receives the update.
+        </p>
+
+    </article>
+
+</section>
+
+
+<section id="css">
+
+    <h2>3. What CSS Does</h2>
+
+    <p>
+        HTML defines the meaning and structure of content. CSS controls how that
+        content is presented.
+    </p>
+
+    <p>
+        CSS can control:
+    </p>
+
+    <ul>
+        <li>Colors</li>
+        <li>Typography</li>
+        <li>Spacing</li>
+        <li>Borders</li>
+        <li>Backgrounds</li>
+        <li>Dimensions</li>
+        <li>Alignment</li>
+        <li>Layouts</li>
+        <li>Responsive behavior</li>
+        <li>Hover and focus states</li>
+        <li>Transitions and visual effects</li>
+    </ul>
+
+    <article>
+
+        <h3>CSS rule anatomy</h3>
+
+        <pre><code>selector {
+    property: value;
+}</code></pre>
+
+        <p>
+            For example:
+        </p>
+
+        <pre><code>h1 {
+    color: #0b1f3a;
+    font-size: 2rem;
+}</code></pre>
+
+        <p>
+            Here, <code>h1</code> is the selector,
+            <code>color</code> and <code>font-size</code> are properties,
+            and their assigned settings are values.
+        </p>
+
+    </article>
+
+</section>
+
+
+<section id="variables">
+
+    <h2>4. CSS Variables and Design Tokens</h2>
+
+    <p>
+        CSS custom properties, commonly called CSS variables, allow important
+        values to be defined once and reused throughout the stylesheet.
+    </p>
+
+    <p>
+        They are often placed inside <code>:root</code> so they are available
+        throughout the page.
+    </p>
+
+    <pre><code>:root {
+    --color-primary: #0b1f3a;
+    --color-secondary: #1e4d7b;
+    --color-background: #ffffff;
+
+    --space-small: 0.75rem;
+    --space-medium: 1rem;
+    --space-large: 1.5rem;
+
+    --radius: 12px;
+}</code></pre>
+
+    <p>
+        The variables can then be reused:
+    </p>
+
+    <pre><code>header {
+    background: var(--color-primary);
+}
+
+section {
+    padding: var(--space-large);
+    border-radius: var(--radius);
+}</code></pre>
+
+
+    <article>
+
+        <h3>Why use design tokens?</h3>
+
+        <p>
+            Design tokens represent the reusable visual decisions of a website.
+            Instead of thinking only about individual CSS rules, the developer
+            defines a small design system.
+        </p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Token Category</th>
+                    <th>Example</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Color</td>
+                    <td><code>--color-primary</code></td>
+                    <td>Main brand or interface color</td>
+                </tr>
+
+                <tr>
+                    <td>Spacing</td>
+                    <td><code>--space-lg</code></td>
+                    <td>Maintains consistent spacing</td>
+                </tr>
+
+                <tr>
+                    <td>Typography</td>
+                    <td><code>--font-sans</code></td>
+                    <td>Controls the main typeface</td>
+                </tr>
+
+                <tr>
+                    <td>Radius</td>
+                    <td><code>--radius</code></td>
+                    <td>Creates consistent rounded corners</td>
+                </tr>
+
+                <tr>
+                    <td>Shadow</td>
+                    <td><code>--shadow-soft</code></td>
+                    <td>Creates consistent visual depth</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </article>
+
+</section>
+
+
+<section id="layout">
+
+    <h2>5. Modern CSS Layout</h2>
+
+    <p>
+        Two of the most important modern CSS layout systems are
+        <strong>Flexbox</strong> and <strong>CSS Grid</strong>.
+    </p>
+
+
+    <article>
+
+        <h3>Flexbox</h3>
+
+        <p>
+            Flexbox is designed primarily for arranging elements in one dimension:
+            either a row or a column.
+        </p>
+
+        <p>
+            It is particularly useful for:
+        </p>
+
+        <ul>
+            <li>Navigation menus</li>
+            <li>Button groups</li>
+            <li>Horizontal alignment</li>
+            <li>Vertical centering</li>
+            <li>Distributing space between elements</li>
+        </ul>
+
+        <pre><code>nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}</code></pre>
+
+    </article>
+
+
+    <article>
+
+        <h3>CSS Grid</h3>
+
+        <p>
+            CSS Grid is a two-dimensional layout system. It controls rows and
+            columns at the same time.
+        </p>
+
+        <p>
+            It works especially well for:
+        </p>
+
+        <ul>
+            <li>Card galleries</li>
+            <li>Dashboards</li>
+            <li>Page sections</li>
+            <li>Responsive content collections</li>
+        </ul>
+
+        <pre><code>.weekly-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(240px, 1fr)
+        );
+
+    gap: 1rem;
+}</code></pre>
+
+    </article>
+
+</section>
+
+
+<section id="responsive">
+
+    <h2>6. Responsive Web Design</h2>
+
+    <p>
+        Responsive design allows one website to adapt to different viewport sizes
+        rather than requiring separate desktop and mobile websites.
+    </p>
+
+    <p>
+        A responsive layout should preserve readability and usability on:
+    </p>
+
+    <ul>
+        <li>Phones</li>
+        <li>Tablets</li>
+        <li>Laptops</li>
+        <li>Desktop monitors</li>
+    </ul>
+
+
+    <article>
+
+        <h3>Media queries</h3>
+
+        <p>
+            Media queries allow CSS rules to apply only when a particular condition
+            is true.
+        </p>
+
+        <pre><code>@media (min-width: 641px) {
+
+    main {
+        width: min(100% - 2rem, 1100px);
+    }
+
+}</code></pre>
+
+        <p>
+            This technique allows the layout to change when the available screen
+            space changes.
+        </p>
+
+    </article>
+
+
+    <article>
+
+        <h3>Mobile-first design</h3>
+
+        <p>
+            In a mobile-first approach, the default CSS is designed for smaller
+            screens. Media queries then progressively enhance the design for larger
+            screens.
+        </p>
+
+        <pre><code>/* Phone first */
+
+.card {
+    padding: 1rem;
+}
+
+/* Larger screens */
+
+@media (min-width: 768px) {
+
+    .card {
+        padding: 2rem;
+    }
+
+}</code></pre>
+
+    </article>
+
+</section>
+
+
+<section id="comparison">
+
+    <h2>7. Flexbox vs. Grid</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Feature</th>
+                <th>Flexbox</th>
+                <th>Grid</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Dimensions</td>
+                <td>Primarily one-dimensional</td>
+                <td>Two-dimensional</td>
+            </tr>
+
+            <tr>
+                <td>Main structure</td>
+                <td>Row or column</td>
+                <td>Rows and columns</td>
+            </tr>
+
+            <tr>
+                <td>Typical use</td>
+                <td>Navigation, controls, alignment</td>
+                <td>Page layouts and galleries</td>
+            </tr>
+
+            <tr>
+                <td>Alignment</td>
+                <td>Excellent</td>
+                <td>Excellent</td>
+            </tr>
+
+            <tr>
+                <td>Responsive layouts</td>
+                <td>Very useful</td>
+                <td>Very useful</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<section>
+
+    <h2>8. Separation of Responsibilities</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Technology</th>
+                <th>Main Responsibility</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>HTML</td>
+                <td>Structure and meaning</td>
+                <td>Heading, paragraph, table, form</td>
+            </tr>
+
+            <tr>
+                <td>CSS</td>
+                <td>Presentation and layout</td>
+                <td>Colors, spacing, Grid, Flexbox</td>
+            </tr>
+
+            <tr>
+                <td>Jinja</td>
+                <td>Template composition</td>
+                <td>Inheritance and reusable blocks</td>
+            </tr>
+
+            <tr>
+                <td>Flask</td>
+                <td>Server-side routing and application logic</td>
+                <td>Connecting URLs to templates</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+<section id="workflow">
+
+    <h2>9. Recommended Development Workflow</h2>
+
+    <ol>
+
+        <li>
+            <strong>Build semantic HTML.</strong>
+            Structure the information logically before worrying about appearance.
+        </li>
+
+        <li>
+            <strong>Extract shared structure.</strong>
+            Move repeated page elements into <code>base.html</code>.
+        </li>
+
+        <li>
+            <strong>Create design tokens.</strong>
+            Define reusable colors, spacing, typography, radii, and shadows.
+        </li>
+
+        <li>
+            <strong>Style shared elements.</strong>
+            Establish consistent headings, navigation, sections, links, tables,
+            and components.
+        </li>
+
+        <li>
+            <strong>Apply modern layout tools.</strong>
+            Use Flexbox and Grid according to the structure of the content.
+        </li>
+
+        <li>
+            <strong>Make the layout responsive.</strong>
+            Test narrow and wide viewports and introduce media queries where needed.
+        </li>
+
+        <li>
+            <strong>Test every page.</strong>
+            Verify that shared styles and navigation still behave correctly.
+        </li>
+
+        <li>
+            <strong>Deploy and verify.</strong>
+            Push the final version and check the live website.
+        </li>
+
+    </ol>
+
+</section>
+
+
+<section>
+
+    <h2>10. Common CSS Mistakes</h2>
+
+    <article>
+        <h3>Repeating the same values everywhere</h3>
+
+        <p>
+            Repeating colors and spacing values makes future changes harder.
+            Design tokens can centralize these decisions.
+        </p>
+    </article>
+
+    <article>
+        <h3>Using fixed widths everywhere</h3>
+
+        <p>
+            Large fixed widths can cause horizontal overflow on smaller screens.
+            Flexible units, maximum widths, Grid, Flexbox, and media queries provide
+            more adaptable layouts.
+        </p>
+    </article>
+
+    <article>
+        <h3>Ignoring narrow screens</h3>
+
+        <p>
+            A design that works only on a desktop is incomplete. The browser should
+            be tested at multiple viewport widths.
+        </p>
+    </article>
+
+    <article>
+        <h3>Overusing CSS</h3>
+
+        <p>
+            More CSS does not automatically mean better design. Reusable rules,
+            clear selectors, and a consistent design system usually produce more
+            maintainable results.
+        </p>
+    </article>
+
+</section>
+
+
+<section>
+
+    <h2>11. Key Takeaways</h2>
+
+    <ul>
+        <li>Shared structures should be defined once.</li>
+        <li>Jinja inheritance prevents unnecessary HTML repetition.</li>
+        <li>One stylesheet can provide a consistent visual identity.</li>
+        <li>CSS variables make design decisions reusable.</li>
+        <li>Flexbox is well suited to one-dimensional layouts.</li>
+        <li>Grid is well suited to two-dimensional layouts.</li>
+        <li>Media queries allow layouts to respond to viewport conditions.</li>
+        <li>Responsive design should preserve readability and usability.</li>
+        <li>A reusable design system makes future pages easier to build.</li>
+    </ul>
+
+</section>
+
+
+<section id="references">
+
+    <h2>12. References & Further Reading</h2>
+
+    <ul>
+        <li>
+            GIN446 — Week 3 Activity Guide,
+            School of Engineering, USEK.
+        </li>
+
+        <li>
+            MDN Web Docs — CSS Custom Properties.
+        </li>
+
+        <li>
+            MDN Web Docs — CSS Flexible Box Layout.
+        </li>
+
+        <li>
+            MDN Web Docs — CSS Grid Layout.
+        </li>
+
+        <li>
+            MDN Web Docs — CSS Media Queries.
+        </li>
+
+        <li>
+            Jinja Documentation — Template Inheritance.
+        </li>
+    </ul>
+
+</section>
+
+{% endblock %}
