@@ -1366,11 +1366,11 @@ body > nav a {
     body > nav ul {
         justify-content: flex-start;
 
-        gap: 1.5rem;
+        gap: 1rem;
 
         padding:
-            0.55rem
-            1rem;
+            0.6rem
+            0.75rem;
     }
 
     body > nav a {
