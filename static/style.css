@@ -53,6 +53,7 @@
     --history-width: 1200px;
 }
 
+
 /* =========================================================
    GLOBAL RESET
 ========================================================= */
@@ -82,6 +83,7 @@ body {
     line-height: 1.65;
 }
 
+
 /* =========================================================
    GLOBAL LINKS
 ========================================================= */
@@ -102,6 +104,7 @@ a:hover {
     color: var(--color-accent);
 }
 
+
 /* =========================================================
    GLOBAL TEXT
 ========================================================= */
@@ -114,6 +117,7 @@ p {
 ul {
     margin-top: 0;
 }
+
 
 /* =========================================================
    SHARED WEBSITE HEADER
@@ -153,9 +157,9 @@ body > header p {
     color: rgba(255, 255, 255, 0.82);
 }
 
+
 /* =========================================================
    HEADER GEOMETRIC EFFECTS
-   Mobile-first sizes
 ========================================================= */
 
 body > header::before {
@@ -210,6 +214,7 @@ body > header::after {
 
     z-index: -1;
 }
+
 
 /* =========================================================
    SHARED MAIN NAVIGATION
@@ -274,6 +279,7 @@ body > nav a:focus-visible {
     outline-offset: 2px;
 }
 
+
 /* =========================================================
    MAIN CONTENT
 ========================================================= */
@@ -293,21 +299,16 @@ main > article {
     margin-bottom: var(--space-xl);
 }
 
+
 /* =========================================================
    HISTORY PAGE WIDTH
 ========================================================= */
-
-/*
-   Home stays at 1100px.
-
-   The four history pages can expand to 1200px,
-   leaving comfortable white space on both sides.
-*/
 
 main:has(> article),
 main:has(> header) {
     width: min(100% - 1rem, var(--history-width));
 }
+
 
 /* =========================================================
    PAGE-SPECIFIC HEADERS
@@ -340,8 +341,6 @@ main header h1 {
     color: var(--color-text-light);
 }
 
-/* Mobile-size page header geometry */
-
 main header::after {
     content: "";
 
@@ -362,6 +361,7 @@ main header::after {
 
     pointer-events: none;
 }
+
 
 /* =========================================================
    PAGE-SPECIFIC NAVIGATION
@@ -412,6 +412,7 @@ main nav a:focus {
     color: var(--color-text-light);
 }
 
+
 /* =========================================================
    SECTIONS
 ========================================================= */
@@ -432,6 +433,7 @@ section {
     box-shadow: var(--shadow-soft);
 }
 
+
 /* =========================================================
    SECTION HEADERS
 ========================================================= */
@@ -450,8 +452,6 @@ section > h2 {
 
     font-size: 1.35rem;
 }
-
-/* Mobile-size section geometry */
 
 section > h2::after {
     content: "";
@@ -474,13 +474,13 @@ section > h2::after {
     pointer-events: none;
 }
 
+
 /* =========================================================
    SECTION CONTENT SPACING
 ========================================================= */
 
 section > p,
 section > ul,
-section > table,
 section > article,
 section > pre {
     margin-left: var(--space-md);
@@ -499,6 +499,7 @@ section > ul:last-child,
 section > article:last-child {
     margin-bottom: var(--space-lg);
 }
+
 
 /* =========================================================
    HOME PAGE — WEEKLY WORK
@@ -525,6 +526,7 @@ section > article:last-child {
 .weekly-list > li {
     margin: 0;
 }
+
 
 /* =========================================================
    WEEKLY WORK GLASS BUTTONS
@@ -562,6 +564,7 @@ main > section:first-child > ul > li > a {
         0 4px 14px rgba(11, 31, 58, 0.06);
 }
 
+
 /* =========================================================
    WEEKLY WORK ARROW
 ========================================================= */
@@ -592,6 +595,7 @@ main > section:first-child > ul > li > a::after {
         transform 0.2s ease;
 }
 
+
 /* =========================================================
    WEEKLY WORK HOVER
 ========================================================= */
@@ -617,6 +621,7 @@ main > section:first-child > ul > li > a:hover::after {
         translateX(3px)
         rotate(45deg);
 }
+
 
 /* =========================================================
    WEEKLY WORK FOCUS
@@ -645,6 +650,7 @@ main > section:first-child > ul > li > a:focus-visible {
     outline-offset: 2px;
 }
 
+
 /* =========================================================
    WEEKLY WORK PRESSED STATE
 ========================================================= */
@@ -661,6 +667,7 @@ main > section:first-child > ul > li > a:active {
     box-shadow:
         0 4px 12px rgba(11, 31, 58, 0.12);
 }
+
 
 /* =========================================================
    ARTICLES
@@ -701,11 +708,6 @@ article h3 {
     color: var(--color-primary);
 }
 
-/* =========================================================
-   ARTICLE GEOMETRIC DETAIL
-   Mobile-first size
-========================================================= */
-
 article::after {
     content: "";
 
@@ -727,6 +729,7 @@ article::after {
 
     pointer-events: none;
 }
+
 
 /* =========================================================
    TYPOGRAPHY
@@ -754,6 +757,7 @@ strong {
     color: var(--color-primary);
 }
 
+
 /* =========================================================
    CODE ELEMENTS
 ========================================================= */
@@ -774,6 +778,7 @@ code {
         monospace;
 }
 
+
 /* =========================================================
    GENERAL LISTS
 ========================================================= */
@@ -790,16 +795,19 @@ main li::marker {
     color: var(--color-secondary);
 }
 
+
 /* =========================================================
    TABLES
 ========================================================= */
 
 table {
-    width: fit-content;
-    max-width: none;
+    width: calc(100% - 3rem);
+    max-width: calc(100% - 3rem);
 
     margin-top: var(--space-lg);
     margin-bottom: var(--space-lg);
+    margin-left: var(--space-lg);
+    margin-right: var(--space-lg);
 
     border-collapse: separate;
     border-spacing: 0;
@@ -814,54 +822,67 @@ table {
 
     box-shadow:
         0 5px 18px rgba(11, 31, 58, 0.05);
+
+    table-layout: fixed;
 }
 
-/* Keep table readable */
+
+/* =========================================================
+   TABLE CELL WRAPPING
+========================================================= */
+
 table th,
 table td {
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: break-word;
 }
 
-/* Rounded corners */
 
-table thead tr:first-child th:first-child {
+/* =========================================================
+   TIMELINE TABLE COLUMN WIDTHS
+========================================================= */
+
+#timeline table th:nth-child(1),
+#timeline table td:nth-child(1) {
+    width: 7%;
+}
+
+#timeline table th:nth-child(2),
+#timeline table td:nth-child(2) {
+    width: 23%;
+}
+
+#timeline table th:nth-child(3),
+#timeline table td:nth-child(3) {
+    width: 45%;
+}
+
+#timeline table th:nth-child(4),
+#timeline table td:nth-child(4) {
+    width: 25%;
+}
+
+
+/* =========================================================
+   TABLE ROUNDED CORNERS
+========================================================= */
+
+table thead tr:first-child > :first-child {
     border-top-left-radius: var(--radius);
 }
 
-table thead tr:first-child th:last-child {
+table thead tr:first-child > :last-child {
     border-top-right-radius: var(--radius);
 }
 
-table tbody tr:last-child td:first-child {
+table tbody tr:last-child > :first-child {
     border-bottom-left-radius: var(--radius);
 }
 
-table tbody tr:last-child td:last-child {
+table tbody tr:last-child > :last-child {
     border-bottom-right-radius: var(--radius);
 }
 
-/* Mobile table behavior */
-
-@media (max-width: 700px) {
-
-    section > table {
-
-        display: block;
-
-        width: calc(100% - 1rem);
-
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-
-        overflow-x: auto;
-        overflow-y: hidden;
-
-        max-width: calc(100% - 1rem);
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-}
 
 /* =========================================================
    TABLE CAPTION
@@ -876,6 +897,7 @@ caption {
 
     text-align: left;
 }
+
 
 /* =========================================================
    TABLE HEADER
@@ -899,11 +921,19 @@ td {
     vertical-align: top;
 }
 
-th {
+thead th {
     color: var(--color-text-light);
 
     font-weight: 700;
 }
+
+/* Row headers inside tbody should use normal text color */
+tbody th {
+    color: var(--color-text);
+
+    font-weight: 400;
+}
+
 
 /* =========================================================
    TABLE ROWS
@@ -913,7 +943,7 @@ tbody tr:nth-child(even) {
     background: var(--color-surface-soft);
 }
 
-tbody tr:last-child td {
+tbody tr:last-child > * {
     border-bottom: 0;
 }
 
@@ -925,6 +955,31 @@ tbody tr {
 tbody tr:hover {
     background: rgba(74, 144, 194, 0.06);
 }
+
+
+/* =========================================================
+   MOBILE TABLE BEHAVIOR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    section > table {
+        display: block;
+
+        width: calc(100% - 1rem);
+        max-width: calc(100% - 1rem);
+
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+}
+
 
 /* =========================================================
    SHARED FOOTER
@@ -971,11 +1026,6 @@ body > footer p:last-child {
     margin-bottom: 0;
 }
 
-/* =========================================================
-   FOOTER GEOMETRIC DETAIL
-   Mobile-first size
-========================================================= */
-
 body > footer::after {
     content: "";
 
@@ -999,6 +1049,7 @@ body > footer::after {
     pointer-events: none;
 }
 
+
 /* =========================================================
    IMAGE / MEDIA SAFETY
 ========================================================= */
@@ -1009,8 +1060,9 @@ video {
     height: auto;
 }
 
+
 /* =========================================================
-   TABLET AND DESKTOP
+   TABLET LAYOUT
 ========================================================= */
 
 @media (min-width: 641px) {
@@ -1048,7 +1100,6 @@ video {
 
     section > p,
     section > ul,
-    section > table,
     section > article {
         margin-left: var(--space-lg);
         margin-right: var(--space-lg);
@@ -1070,8 +1121,9 @@ video {
             1.1rem;
     }
 
+
     /* =====================================================
-       RESTORE DESKTOP HEADER GEOMETRY
+       RESTORE LARGER HEADER GEOMETRY
     ===================================================== */
 
     body > header::before {
@@ -1098,8 +1150,9 @@ video {
             inset 0 0 25px rgba(74, 144, 194, 0.08);
     }
 
+
     /* =====================================================
-       RESTORE DESKTOP PAGE HEADER GEOMETRY
+       RESTORE LARGER PAGE HEADER GEOMETRY
     ===================================================== */
 
     main header::after {
@@ -1113,8 +1166,9 @@ video {
             0 0 0 18px rgba(255, 255, 255, 0.025);
     }
 
+
     /* =====================================================
-       RESTORE DESKTOP SECTION GEOMETRY
+       RESTORE LARGER SECTION GEOMETRY
     ===================================================== */
 
     section > h2::after {
@@ -1128,8 +1182,9 @@ video {
             0 0 0 16px rgba(255, 255, 255, 0.025);
     }
 
+
     /* =====================================================
-       RESTORE DESKTOP ARTICLE GEOMETRY
+       RESTORE LARGER ARTICLE GEOMETRY
     ===================================================== */
 
     article::after {
@@ -1142,8 +1197,9 @@ video {
         border-radius: 14px;
     }
 
+
     /* =====================================================
-       RESTORE DESKTOP FOOTER GEOMETRY
+       RESTORE LARGER FOOTER GEOMETRY
     ===================================================== */
 
     body > footer::after {
@@ -1157,24 +1213,25 @@ video {
     }
 }
 
+
 /* =========================================================
    RESPONSIVE MAIN NAVIGATION
 ========================================================= */
-
-/* ---------------------------------------------------------
-   Default navigation:
-   Always keep items in one row
---------------------------------------------------------- */
 
 body > nav {
     overflow-x: auto;
     overflow-y: hidden;
 
     -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+}
+
+body > nav::-webkit-scrollbar {
+    display: none;
 }
 
 body > nav ul {
-
     width: max-content;
     min-width: 100%;
 
@@ -1199,7 +1256,6 @@ body > nav li {
 }
 
 body > nav a {
-
     display: block;
 
     padding: 0.45rem 0.65rem;
@@ -1211,48 +1267,86 @@ body > nav a {
     white-space: nowrap;
 }
 
-/* Hide scrollbar but keep scrolling */
-
-body > nav {
-    scrollbar-width: none;
-}
-
-body > nav::-webkit-scrollbar {
-    display: none;
-}
 
 /* =========================================================
-   Desktop navigation
+   TABLET AND LARGER NAVIGATION
 ========================================================= */
 
 @media (min-width: 641px) {
 
     body > nav ul {
-
         width: max-content;
         min-width: 100%;
 
         gap: 2.5rem;
-
     }
 
     body > nav a {
-
         font-size: 0.95rem;
-
     }
 
 }
 
 /* =========================================================
-   Tablet navigation
-   One line + smaller text
+   DESKTOP LAYOUT
+========================================================= */
+
+@media (min-width: 1024px) {
+
+    main {
+        width: min(100% - 3rem, var(--content-width));
+    }
+
+    main:has(> article),
+    main:has(> header) {
+        width: min(100% - 3rem, var(--history-width));
+    }
+
+    body > nav ul {
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    body > nav a {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .weekly-list {
+        grid-template-columns:
+            repeat(
+                auto-fit,
+                minmax(280px, 1fr)
+            );
+    }
+
+    article {
+        padding: var(--space-xl);
+    }
+
+    section > h2 {
+        padding:
+            var(--space-lg)
+            var(--space-xl);
+    }
+
+    section > p,
+    section > ul,
+    section > article {
+        margin-left: var(--space-xl);
+        margin-right: var(--space-xl);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET NAVIGATION
 ========================================================= */
 
 @media (max-width: 900px) {
 
     body > nav ul {
-
         justify-content: flex-start;
 
         gap: 1.5rem;
@@ -1260,30 +1354,26 @@ body > nav::-webkit-scrollbar {
         padding:
             0.55rem
             1rem;
-
     }
 
     body > nav a {
-
         padding:
             0.4rem
             0.55rem;
 
         font-size: 0.82rem;
-
     }
 
 }
 
+
 /* =========================================================
-   Mobile navigation
-   One line + horizontal scrolling
+   MOBILE NAVIGATION
 ========================================================= */
 
 @media (max-width: 650px) {
 
     body > nav ul {
-
         justify-content: flex-start;
 
         gap: 1rem;
@@ -1291,36 +1381,30 @@ body > nav::-webkit-scrollbar {
         padding:
             0.6rem
             0.75rem;
-
     }
 
     body > nav a {
-
         padding:
             0.55rem
             0.45rem;
 
         font-size: 0.9rem;
-
     }
 
 }
 
+
 /* =========================================================
    PAGE-SPECIFIC NAVIGATION
-   (Week 2 / Week 3 internal navigation)
 ========================================================= */
 
 @media (max-width: 705px) {
 
     main nav {
-
         padding: 0.5rem;
-
     }
 
     main nav ul {
-
         display: grid;
 
         grid-template-columns: 1fr;
@@ -1330,17 +1414,13 @@ body > nav::-webkit-scrollbar {
         margin: 0;
 
         padding: 0;
-
     }
 
     main nav li {
-
         margin: 0;
-
     }
 
     main nav a {
-
         display: block;
 
         width: 100%;
@@ -1352,7 +1432,7 @@ body > nav::-webkit-scrollbar {
         font-size: 0.9rem;
 
         text-align: left;
-
     }
 
 }
+

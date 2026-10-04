@@ -1,112 +1,362 @@
 {% extends "base.html" %}
 
 {% block title %}
-History of the Internet
+History of the Internet - AI Version
 {% endblock %}
 
 {% block content %}
 
-<article>
-    <header>
-        <h1>History of the Internet</h1>
-    </header>
-    
-    <section>
-        <h2>Introduction</h2>
-        <p>The Internet is a globally interconnected system of computer networks that utilizes the Internet Protocol Suite (TCP/IP) to link devices worldwide. Its conceptual origins trace back to the early 1960s with theoretical work on packet switching and vision statements regarding cooperative global networking. Transitioning from a military-academic research project into a commercial and public utility, the Internet transformed global communications, commerce, and media.</p>
-    </section>
+<header>
+    <h1>History of the Internet</h1>
 
-    <section>
-        <h2>Key Milestones</h2>
-        <table>
-            <caption>Major milestones in the development of the Internet from the 1960s to the 2010s</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Year</th>
-                    <th scope="col">Event</th>
-                    <th scope="col">Why it Mattered</th>
-                    <th scope="col">Source</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1969</td>
-                    <td>ARPANET, the first operational packet-switching network, connected computers at UCLA and Stanford University.</td>
-                    <td>It proved the practical viability of packet switching, establishing the structural backbone for future decentralized computer networking.</td>
-                    <td>Internet Society / National Science and Media Museum</td>
-                </tr>
+    <p>
+        A comprehensive journey from Cold War research to global connectivity.
+    </p>
+</header>
 
-                <tr>
-                    <td>1971</td>
-                    <td>Ray Tomlinson developed the first network electronic mail (email) program on ARPANET.</td>
-                    <td>It introduced the first "killer app," shifting computer networks from raw data-transfer channels to robust interpersonal communication tools.</td>
-                    <td>Internet Society</td>
-                </tr>
+<nav>
+    <ul>
+        <li><a href="#intro">Introduction</a></li>
+        <li><a href="#timeline">Milestones</a></li>
+        <li><a href="#technologies">Key Technologies</a></li>
+        <li><a href="#sources">Reliable Sources Used</a></li>
+    </ul>
+</nav>
 
-                <tr>
-                    <td>1974</td>
-                    <td>Vint Cerf and Bob Kahn published their proposal for Transmission Control Protocol (TCP).</td>
-                    <td>It defined a standardized, open-architecture networking framework allowing disparate computer networks to seamlessly communicate with one another.</td>
-                    <td>Internet Society / Wikipedia</td>
-                </tr>
 
-                <tr>
-                    <td>1983</td>
-                    <td>ARPANET officially adopted the TCP/IP protocol suite on January 1.</td>
-                    <td>This standardization unified isolated experimental networks into a cohesive, global "network of networks" (the Internet).</td>
-                    <td>Wikipedia</td>
-                </tr>
+<section id="intro">
+    <h2>Introduction</h2>
 
-                <tr>
-                    <td>1984</td>
-                    <td>The Domain Name System (DNS) was introduced.</td>
-                    <td>It replaced cumbersome numeric IP addresses with human-readable, hierarchical domain names, making web navigation practical for the general public.</td>
-                    <td>National Science and Media Museum / Computer History Museum</td>
-                </tr>
+    <p>
+        The history of the Internet began with research into packet-switched computer
+        networks during the 1960s. Early projects such as ARPANET demonstrated that
+        computers located far apart could communicate and share resources through a
+        network. During the 1970s and 1980s, the development and adoption of TCP/IP
+        allowed different networks to interconnect, creating a network of networks.
+        The expansion of NSFNET and other interconnected networks helped transform
+        the Internet from a research system into a global communications
+        infrastructure used by universities, organizations, businesses, and the public.
+    </p>
+</section>
 
-                <tr>
-                    <td>1991</td>
-                    <td>The Commercialization of the Internet / NSFNET lifted commercial traffic restrictions.</td>
-                    <td>It paved the way for private Internet Service Providers (ISPs) and unlocked the global e-commerce and consumer web ecosystem.</td>
-                    <td>CERN / Internet Society</td>
-                </tr>
 
-                <tr>
-                    <td>2000s–2010s</td>
-                    <td>Transition to Broadband, Mobile Internet, and IPv6 deployment.</td>
-                    <td>High-speed broadband and mobile connectivity integrated internet access into daily personal devices, giving rise to cloud computing, social media, and the Internet of Things (IoT).</td>
-                    <td>Internet Society</td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
+<section id="timeline">
+    <h2>Key Milestones (1969 – 2012)</h2>
 
-    <section>
-        <h2>Three Key Technologies for the Internet</h2>
-        <ul>
-            <li>
-                <strong>Packet Switching:</strong> A method of grouping digital data into discrete "packets" routed across a network independently, optimizing bandwidth efficiency and network survivability without a single point of failure.
-            </li>
+    <table>
+        <caption>
+            Major milestones in the development of the Internet
+            from 1969 to 2012
+        </caption>
 
-            <li>
-                <strong>TCP/IP (Transmission Control Protocol / Internet Protocol):</strong> The foundational protocol suite ensuring reliable, ordered data delivery across heterogeneous physical networks.
-            </li>
+        <thead>
+            <tr>
+                <th scope="col">Year</th>
+                <th scope="col">Milestone</th>
+                <th scope="col">Description</th>
+                <th scope="col">Verified Source</th>
+            </tr>
+        </thead>
 
-            <li>
-                <strong>Domain Name System (DNS):</strong> The distributed naming database that dynamically translates human-friendly domain names (e.g., <code>example.com</code>) into machine-readable IP addresses.
-            </li>
-        </ul>
-    </section>
+        <tbody>
 
-    <section>
-        <h2>Reliable Sources Used (Internet)</h2>
-        <ul>
-            <li>Internet Society (ISOC) – <em>A Brief History of the Internet</em></li>
-            <li>Computer History Museum – <em>Internet History 1962 to 1992</em></li>
-            <li>National Science and Media Museum – <em>A short history of the internet</em></li>
-            <li>Wikipedia – <em>History of the Internet</em></li>
-        </ul>
-    </section>
-</article>
+            <tr>
+                <td>1969</td>
+
+                <td>First ARPANET Connection</td>
+
+                <td>
+                    On October 29, 1969, computers at UCLA and Stanford connected
+                    for the first time, establishing the foundational network of the
+                    Internet. This proved that long-distance packet networking was
+                    physically possible.
+                </td>
+
+                <td>
+                    <a href="https://www.computerhistory.org/internethistory/"
+                       target="_blank">
+                        Computer History Museum
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1971</td>
+
+                <td>Network Email</td>
+
+                <td>
+                    Programmer Ray Tomlinson implemented the first system to send mail
+                    between users on different ARPANET hosts, introducing the "@"
+                    symbol. It shifted the network's purpose toward direct
+                    human-to-human communication.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1973</td>
+
+                <td>Global Expansion</td>
+
+                <td>
+                    The UK and Norway connected to ARPANET, expanding the network
+                    into an international endeavor and proving that connections
+                    could cross oceans.
+                </td>
+
+                <td>
+                    <a href="https://www.ietf.org/standards/ids/"
+                       target="_blank">
+                        IETF Standards
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1974</td>
+
+                <td>TCP Networking Proposal</td>
+
+                <td>
+                    Vint Cerf and Bob Kahn published their design for the Transmission
+                    Control Protocol (TCP), describing how different packet-switched
+                    networks could communicate with one another. This work became a
+                    foundation for the TCP/IP protocol suite used by the Internet.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1983</td>
+
+                <td>Transition to TCP/IP</td>
+
+                <td>
+                    On January 1, 1983, ARPANET transitioned from its previous
+                    Network Control Protocol (NCP) to the TCP/IP protocol suite.
+                    This allowed different networks to communicate using a common
+                    set of protocols and was a major step in the development of
+                    the modern Internet.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1984</td>
+
+                <td>Domain Name System (DNS)</td>
+
+                <td>
+                    Paul Mockapetris introduced DNS, a naming system allowing users
+                    to type human-readable addresses instead of complex numeric IP
+                    addresses. This made network navigation practical for everyday
+                    users.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1986</td>
+
+                <td>NSFNET Launch</td>
+
+                <td>
+                    NSFNET was launched to connect research and university networks
+                    across the United States. It became an important backbone of the
+                    growing Internet and helped expand network access beyond ARPANET.
+                </td>
+
+                <td>
+                    <a href="https://www.nsf.gov/impacts/internet"
+                       target="_blank">
+                        National Science Foundation (NSF)
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1989</td>
+
+                <td>ARPANET Decommissioned</td>
+
+                <td>
+                    ARPANET was formally decommissioned after two decades of
+                    operation. By this time, TCP/IP-based networks had expanded
+                    significantly and ARPANET's functions had been absorbed into
+                    the growing Internet.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>1995</td>
+
+                <td>NSFNET Backbone Retired</td>
+
+                <td>
+                    The NSFNET backbone was retired as commercial Internet providers
+                    took over much of the network infrastructure. This marked an
+                    important transition toward the commercial and publicly
+                    accessible Internet.
+                </td>
+
+                <td>
+                    <a href="https://www.nsf.gov/impacts/internet"
+                       target="_blank">
+                        National Science Foundation (NSF)
+                    </a>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td>2012</td>
+
+                <td>World IPv6 Launch</td>
+
+                <td>
+                    Internet providers, websites, and technology companies
+                    permanently enabled IPv6 as part of World IPv6 Launch. IPv6
+                    provides a much larger address space to support the continuing
+                    growth of Internet-connected devices.
+                </td>
+
+                <td>
+                    <a href="https://www.internetsociety.org/news/press-releases/2012/world-ipv6-launch-solidifies-global-support-for-new-internet-protocol/"
+                       target="_blank">
+                        Internet Society
+                    </a>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+
+<section id="technologies">
+    <h2>Three Key Technologies</h2>
+
+    <dl>
+
+        <dt>
+            <strong>TCP/IP (Transmission Control Protocol / Internet Protocol)</strong>
+        </dt>
+
+        <dd>
+            The foundational communication language of the Internet. It dictates
+            how data is broken into packets, addressed, transmitted, routed, and
+            reassembled at the destination, allowing vastly different computer
+            networks to communicate seamlessly.
+        </dd>
+
+
+        <dt>
+            <strong>DNS (Domain Name System)</strong>
+        </dt>
+
+        <dd>
+            Essentially the phonebook of the Internet. It translates memorable,
+            human-readable domain names into the numerical IP addresses required
+            by computers to locate services and devices worldwide.
+        </dd>
+
+
+        <dt>
+            <strong>Packet Switching</strong>
+        </dt>
+
+        <dd>
+            A networking technique in which data is divided into smaller packets
+            that can travel independently through a network and be reassembled at
+            the destination. Packet switching made efficient and flexible
+            communication across interconnected computer networks possible.
+        </dd>
+
+    </dl>
+</section>
+
+
+<section id="sources">
+    <h2>Reliable Sources Used</h2>
+
+    <ol>
+
+        <li>
+            <a href="https://www.internetsociety.org/internet/history-internet/short-history-of-the-internet/"
+               target="_blank">
+                Internet Society - Short History of the Internet
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.internetsociety.org/internet/history-internet/brief-history-internet-related-networks/"
+               target="_blank">
+                Internet Society - A Brief History of the Internet &amp; Related Networks
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.computerhistory.org/internethistory/"
+               target="_blank">
+                Computer History Museum - Internet History
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.nsf.gov/impacts/internet"
+               target="_blank">
+                National Science Foundation - The Internet
+            </a>
+        </li>
+
+        <li>
+            <a href="https://www.internetsociety.org/news/press-releases/2012/world-ipv6-launch-solidifies-global-support-for-new-internet-protocol/"
+               target="_blank">
+                Internet Society - World IPv6 Launch
+            </a>
+        </li>
+
+    </ol>
+</section>
 
 {% endblock %}
