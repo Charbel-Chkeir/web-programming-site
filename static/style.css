@@ -1291,7 +1291,7 @@ body > nav a {
    DESKTOP LAYOUT
 ========================================================= */
 
-@media (min-width: 1024px) {
+@media (min-width: 1064px) {
 
     main {
         width: min(100% - 3rem, var(--content-width));
