@@ -1375,8 +1375,8 @@ body > nav a {
 
     body > nav a {
         padding:
-            0.55rem
-            0.45rem;
+            0.4rem
+            0.55rem;
 
         font-size: 0.82rem;
     }
@@ -1405,7 +1405,7 @@ body > nav a {
             0.55rem
             0.45rem;
 
-        font-size: 0.9rem;
+        font-size: 0.82rem;
     }
 
 }
