@@ -217,3 +217,69 @@ form textarea::placeholder {
         margin-top: var(--space-sm);
     }
 }
+
+.hidden {
+  display: none;
+}
+
+
+/* =========================================================
+   REVIEW PANEL STYLING - MATCH FORM DESIGN
+========================================================= */
+
+#review-panel {
+    margin-top: var(--space-xl);
+    padding-bottom: var(--space-lg);
+
+    background: var(--color-surface);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-soft);
+}
+
+#review-panel h2 {
+    margin: 0;
+    padding: var(--space-lg);
+
+    background: var(--color-primary);
+    color: var(--color-text-light);
+
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+#review-content {
+    padding: var(--space-lg);
+}
+
+#review-content p {
+    margin-bottom: var(--space-sm);
+
+    padding-bottom: var(--space-sm);
+
+    border-bottom: 1px solid var(--color-border);
+}
+
+.review-actions {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-md);
+
+    padding: 0 var(--space-lg);
+}
+
+.review-actions button {
+    padding: 0.75rem 1.2rem;
+
+    background: var(--color-primary);
+    color: var(--color-text-light);
+
+    border: none;
+    border-radius: var(--radius);
+
+    font: inherit;
+    font-weight: 600;
+
+    cursor: pointer;
+}
