@@ -138,6 +138,7 @@ form input[type="radio"] {
     margin-right: 0.35rem;
 }
 
+/* Color Picker */
 form input[type="color"] {
     padding: 0.2rem;
 
@@ -196,13 +197,16 @@ form textarea::placeholder {
     color: var(--color-muted);
 }
 
+
+/* Mobile Responsive Design */
+
 @media (max-width: 640px) {
 
     form fieldset {
         padding: var(--space-md);
     }
 
-    form input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),
+    form input:not([type="checkbox"]):not([type="radio"]):not([type="color"]),  /* :not() means EXCEPT */
     form select,
     form textarea {
         width: 100%;

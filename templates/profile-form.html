@@ -31,7 +31,6 @@
             name="student_id"
             placeholder="202702936"
             pattern="[0-9]{9}"
-            maxlength="9"
             required
         >
 
@@ -56,6 +55,7 @@
             name="email"
             size="35"
             placeholder="student@net.usek.edu.lb"
+            pattern="[a-zA-Z0-9._%+\-]+@net\.usek\.edu\.lb"
             required
         >
 
@@ -67,8 +67,10 @@
             id="phone"
             name="phone"
             placeholder="+961 70 123456"
+            pattern="(?:03|7[01689]|81|\+961 ?(?:3|7[01689]|81)) ?[0-9]{6}"  
             required
         >
+            <!-- (?:...) : Groups options without capturing them -->
 
         <br> <br>
 
