@@ -57,6 +57,7 @@ def home():
         {"week": 4, "title": "Engineering Student Profile", "url": "/submit-profile"},
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
         {"week": 6, "title": "Engineering Student Profile 2", "url": "/submit-profile-2"},
+        {"week": 7, "title": "Live Quiz with Fetch", "url": "/live-quiz"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -128,6 +129,9 @@ def submit_profile_2():
     # First visit (GET): just show the empty form.
     return render_template("profile-form-2.html")
 
+@app.route("/live_quiz", methods=["GET", "POST"])
+def live_quiz():
+    return render_template("live_quiz.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
