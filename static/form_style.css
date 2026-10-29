@@ -287,7 +287,3 @@ form textarea::placeholder {
 
     cursor: pointer;
 }
-
-.error {
-    color: #ff0000;
-}
