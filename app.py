@@ -37,6 +37,7 @@ Example inside profile.html (which extends your base.html):
 """
 
 from flask import Flask, render_template, request
+from validators import validate_profile
 
 app = Flask(__name__)
 
@@ -58,6 +59,7 @@ def home():
         {"week": 5, "title": "JavaScript app", "url": "/quiz"},
         {"week": 6, "title": "Engineering Student Profile 2", "url": "/submit-profile-2"},
         {"week": 7, "title": "Live Quiz with Fetch", "url": "/live-quiz"},
+        {"week": 8, "title": "Server-Side Profile Validation", "url": "/profile-validated"},
     ]
     return render_template("index.html", weekly_work=weekly_work)
 
@@ -129,9 +131,41 @@ def submit_profile_2():
     # First visit (GET): just show the empty form.
     return render_template("profile-form-2.html")
 
+
 @app.route("/live_quiz", methods=["GET", "POST"])
 def live_quiz():
     return render_template("live_quiz.html")
+
+
+@app.route("/profile-validated", methods=["GET", "POST"])
+def profile_validated():
+    if request.method == "POST":
+        errors, cleaned = validate_profile(request.form)
+
+        if errors:
+            return render_template(
+                "profile-form-validated.html",
+                errors=errors,
+                data=request.form,
+                sel_skills=request.form.getlist("skills"),
+                sel_software=request.form.getlist("software"),
+            )
+
+        return render_template(
+            "profile_validated.html",
+            data=cleaned,
+            skills=cleaned.get("skills", []),
+            software=cleaned.get("software", []),
+        )
+
+    return render_template(
+        "profile-form-validated.html",
+        errors={},
+        data={},
+        sel_skills=[],
+        sel_software=[],
+    )
+
 
 if __name__ == "__main__":
     app.run(debug=True)
