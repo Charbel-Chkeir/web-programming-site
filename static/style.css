@@ -1313,22 +1313,24 @@ body > nav a {
     }
 
     body > nav {
-        overflow-x: hidden;
+        overflow-x: auto;
     }
 
     body > nav ul {
-        width: min(100% - 2rem, 1500px);
-        min-width: 0;
+        width: max-content;
+        min-width: 100%;
 
-        margin: 0 auto;
+        margin: 0;
 
-        justify-content: space-between;
+        justify-content: flex-start;
+
+        flex-wrap: nowrap;
 
         gap: 0.75rem;
     }
 
     body > nav li {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
     }
 
     body > nav a {
