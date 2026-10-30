@@ -658,4 +658,24 @@
 
 </form>
 
+    <br><br>
+
+<section id="review-panel" class="hidden">
+    <h2>Review Your Profile</h2>
+
+    <div id="review-content">
+        <!-- JavaScript will display the submitted information here. -->
+    </div>
+
+    <div class="review-actions">
+        <button type="button" id="edit-button">Edit</button>
+        <button type="button" id="confirm-button">Confirm &amp; Submit</button>
+    </div>
+</section>
+
+<script
+    src="{{ url_for('static', filename='profile.js') }}"
+    defer>
+</script>
+
 {% endblock %}
