@@ -12,7 +12,7 @@
 
 {% macro err(f) %}
     {% if errors.get(f) %}
-        <span class="error">{{ errors[f] }}</span>
+        <span class="error" role="alert">{{ errors[f] }}</span>
     {% endif %}
 {% endmacro %}
 
@@ -23,7 +23,6 @@
     technical skills, internship experience, and Final Year Project preferences.
 </p>
 
-<br>
 
 <form
     method="post"
@@ -32,7 +31,7 @@
 >
 
     <fieldset>
-        <legend>1. Personal Information</legend> <br>
+        <legend>1. Personal Information</legend>
 
         <label for="student_id">Student ID:</label>
         <input
@@ -133,7 +132,7 @@
     <br>
 
     <fieldset>
-        <legend>2. Academic Information</legend> <br>
+        <legend>2. Academic Information</legend>
 
         <label for="major">Engineering Major:</label>
         <select id="major" name="major" required>
@@ -288,7 +287,7 @@
     <br>
 
     <fieldset>
-        <legend>3. Technical Background</legend> <br>
+        <legend>3. Technical Background</legend>
 
         <p>Select all areas in which you have experience:</p>
 
@@ -451,7 +450,7 @@
     <br>
 
     <fieldset>
-        <legend>4. Final Year Project</legend> <br>
+        <legend>4. Final Year Project</legend>
 
         <label for="project_title">Proposed Project Title:</label>
         <input
@@ -673,9 +672,24 @@
     </div>
 </section>
 
-<script
-    src="{{ url_for('static', filename='profile.js') }}"
-    defer>
+
+<script>
+  // Loading state: while the form is being sent to the server,
+  // disable the Submit button and change its text so the user knows it is working.
+  const profileForm = document.querySelector("main form");
+  const submitButton = profileForm.querySelector('button[type="submit"]');
+
+  profileForm.addEventListener("submit", function () {
+    submitButton.disabled = true;
+    submitButton.textContent = "Submitting…";
+  });
+
+  // If the user comes back with the browser's Back button, make the button usable again.
+  window.addEventListener("pageshow", function () {
+    submitButton.disabled = false;
+    submitButton.textContent = "Submit Profile";
+  });
 </script>
+
 
 {% endblock %}

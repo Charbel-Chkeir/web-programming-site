@@ -192,5 +192,16 @@ editButton.addEventListener("click", function () {
 });
 
 confirmButton.addEventListener("click", function () {
+  // Loading state while the profile is sent to the server
+  confirmButton.disabled = true;
+  editButton.disabled = true;
+  confirmButton.textContent = "Submitting…";
   form.submit();
+});
+
+// Back button: make the buttons usable again
+window.addEventListener("pageshow", function () {
+  confirmButton.disabled = false;
+  editButton.disabled = false;
+  confirmButton.textContent = "Confirm & Submit";
 });

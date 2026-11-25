@@ -138,6 +138,12 @@ button:disabled {
   cursor: not-allowed;
 }
 
+/* Visible focus ring for keyboard users */
+button:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
 .submit {
   display: block;
 
@@ -243,3 +249,13 @@ button:disabled {
   }
 }
 
+/* Make the loading and error states visible */
+#loading {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+#error {
+  color: #b00020;
+  font-weight: 600;
+}

@@ -101,7 +101,8 @@ a {
 }
 
 a:hover {
-    color: var(--color-accent);
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 
@@ -1454,3 +1455,38 @@ body > nav a {
 
 }
 
+/* =========================================================
+    SKIP LINK
+   Hidden above the screen; slides into view when it gets
+   keyboard focus (the first Tab press on any page).
+========================================================= */
+
+.skip-link {
+    position: absolute;
+    top: -100px;                 /* off-screen by default */
+    left: var(--space-md);
+    z-index: 1000;               /* above the header */
+
+    padding: var(--space-sm) var(--space-md);
+
+    background: var(--color-background);
+    color: var(--color-primary);
+
+    font-weight: 700;
+    border-radius: var(--radius);
+}
+
+.skip-link:focus {
+    top: var(--space-md);        /* slides into view */
+    outline: 3px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+    LINKS INSIDE TEXT
+   Underlined so they are recognised without relying on colour.
+========================================================= */
+
+main p a {
+    text-decoration: underline;
+}

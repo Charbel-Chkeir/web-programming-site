@@ -1,11 +1,11 @@
 {% extends "base.html" %} {% block title %} Quiz {% endblock %} {% block head %}
 <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}" />
 {% endblock %} {% block content%}
-<main class="container">
+<div class="container">
   <h1>JavaScript Quiz</h1>
   <section id="quizPanel">
     <p id="loading" hidden>Loading…</p>
-    <p id="error" hidden></p>
+    <p id="error" role="alert" hidden></p>
     <p id="progress"></p>
     <h2 id="questionText"></h2>
     <div id="choices"></div>
@@ -25,6 +25,6 @@
     <h3>Correction</h3>
     <pre id="correction"></pre>
   </section>
-</main>
+</div>
 <script src="{{ url_for('static', filename='live_quiz.js') }}"></script>
 {% endblock %}
