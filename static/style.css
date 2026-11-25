@@ -285,7 +285,8 @@ body > nav a:focus-visible {
 ========================================================= */
 
 main {
-    width: min(100% - 1rem, var(--content-width));
+    width: calc(100% - 1rem);      
+    max-width: var(--content-width);   
 
     margin: 0 auto;
 
@@ -306,7 +307,7 @@ main > article {
 
 main:has(> article),
 main:has(> header) {
-    width: min(100% - 1rem, var(--history-width));
+    max-width: var(--history-width);
 }
 
 
@@ -1078,14 +1079,9 @@ video {
 @media (min-width: 641px) {
 
     main {
-        width: min(100% - 2rem, var(--content-width));
+        width: calc(100% - 2rem);
 
         padding: var(--space-2xl) 0;
-    }
-
-    main:has(> article),
-    main:has(> header) {
-        width: min(100% - 2rem, var(--history-width));
     }
 
     body > header {
@@ -1304,12 +1300,7 @@ body > nav a {
 @media (min-width: 1064px) {
 
     main {
-        width: min(100% - 3rem, var(--content-width));
-    }
-
-    main:has(> article),
-    main:has(> header) {
-        width: min(100% - 3rem, var(--history-width));
+        width: calc(100% - 3rem);
     }
 
     body > nav {

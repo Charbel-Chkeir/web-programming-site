@@ -5,7 +5,8 @@ body {
 }
 
 .container {
-  width: min(100% - 2rem, 850px);
+  width: calc(100% - 2rem);
+  max-width: 850px;
 
   margin: var(--space-2xl) auto;
 
